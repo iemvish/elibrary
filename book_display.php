@@ -90,6 +90,7 @@ $result = mysqli_query($conn, $query);
                                     <td><?php echo $sn; ?> </td>
                                     <td><?php echo $data['book_name']; ?> </td>
                                     <td><?php echo $data['book_details']; ?> </td>
+                                    <td><?php echo $data['book_author']; ?> </td>
                                     <td><?php echo $data['book_pub']; ?> </td>
                                     <td><?php echo $data['branch']; ?> </td>
                                     <td><?php echo $data['price']; ?> </td>
