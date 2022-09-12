@@ -14,7 +14,46 @@
 </head>
 
 <body>
-    
+    <div class="container">
+    <?php include('header.php');?>
+        <div class="block1">
+            <div class="b1txt">
+                <div class="part1">
+                    <h1>elibrary</h1>
+                    <h1> Library Management</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer Lorem Ipsum has been the industry's</p>
+                    <a href=""><button class="btn">Read More</button></a>
+                    <a href=""><button class="btna">Purchases Now</button></a>
+                </div>
+            </div>
+
+            <div class="part2">
+
+                <img src="images\l1.jpg" alt="">
+
+            </div>
+        </div>
+
+        <div class="block2">
+            <div class="block2txt">
+                <ul class="menu2">
+                    <li>W H A T</li>
+                    <li>W E</li>
+                    <li>D O</li>
+
+                </ul>
+                <h1 class="wcu">Why Choose Us</h1>
+                <p>Because you know digital. With working knowlwdge of online,SEO and
+                    social
+                    media</p>
+                <p>we can take your message wherever it need to go</p>
+            </div>
+
+        </div>
+
+
 
 
         <div class="block3">
