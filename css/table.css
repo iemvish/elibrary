@@ -1,0 +1,42 @@
+table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .teacher_table {
+            padding: 100px;
+            padding-top: 0;
+        }
+        .update{
+            background-color: white;
+            color: blue;
+        }
+        .delete{
+            background-color: white;
+            color: red;
+            
+
+        }
+        table button{
+            border: 1px solid burlywood;
+            padding: 8px 15px 8px 15px;
+            border-radius: 10px;
+        }
+        table .d a :hover{
+            background-color: red;
+            color: white;
+        }
+        table .u a :hover{
+            background-color: blue;
+            color: white;
+        }
+
+        

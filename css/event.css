@@ -1,0 +1,12 @@
+.container
+{
+    width: 100%;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+}
+.header
+{
+    width: 100%;
+    float: left;
+    background-color: #0674DB;
+}

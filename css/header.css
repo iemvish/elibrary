@@ -1,0 +1,76 @@
+.header
+{
+    width: 100%;
+    float: left;
+    background-color: #0674DB;
+    color: #87C1FF;
+}
+.hleft
+{
+    width: 30%;
+    float: left;
+    padding: 5px
+}
+.hright{
+    float: left;
+}
+.hleft p{
+    font-size: 40px;
+    margin: 0;
+}
+.white_c{
+    color: white;
+}
+.header a{
+    color: #87C1FF;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.hright .navbar ul li{
+    position: relative;
+    float: left;
+    padding-right: 25px;
+}
+
+.hright .navbar ul a li{
+    display: block;
+}
+.hright .navbar
+{
+    padding-top: 20px;
+}
+.hright .navbar ul a:hover{
+    background-color: red;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: rgb(230, 18, 103);
+    padding: 8px;
+
+   
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .logo
+  {
+    padding-left: 35px;
+  }
+
+  

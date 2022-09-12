@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  float: left;
+}
+
+
+.error {
+  color: red;
+}
+
+.form {
+  padding: 90px;
+  padding-top: 0;
+
+}
+
+.frm {
+  width: 30%;
+  margin: 80px auto;
+  background-color: darkcyan;
+  color: white;
+  padding-right: 17px;
+
+}
+
+.frm h2 {
+  text-align: center;
+
+  margin: 20px;
+}
+
+.frm input[type="text"],
+.frm input[type="email"],
+.frm input[type="password"] {
+  width: 100%;
+  padding: 9px;
+  border-radius: 9px;
+  border: 1px solid;
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  padding: 8px 135px 8px 135px;
+  font-size: 15px;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn a:hover {
+  background-color: red;
+}
+
+a{
+  text-decoration: none;
+}

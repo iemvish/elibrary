@@ -1,0 +1,44 @@
+.container
+{
+    width: 100%;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+.mainblock
+{
+    width: 100%;
+    float: left;
+}
+.dashleft
+{
+    width: 15%;
+    float: left;
+}
+.dashleft .dmenu{
+    margin: 0;
+    padding: 0;
+
+}
+.dashleft .dmenu a{
+    text-decoration: none;
+    list-style: none;
+    color: #5B82C1;
+    font-weight: 600;
+    
+}
+.dashleft .dmenu li{
+    padding: 4px;
+    text-align: center;
+    color: #438bd8;
+    
+}
+.dashleft a :hover{
+    background-color: #87C1FF;
+    color: white;
+    
+}
+
