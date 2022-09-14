@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/mystyle1.css">
-  
+
 </head>
 
 <body>
@@ -21,8 +21,7 @@
   $fname = $email = $pnum = $pass = $confirmpass = "";
 
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST")
-   {
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["fullName"])) {
       // $fnameErr = "Name is required!";
     } else {
@@ -80,10 +79,8 @@
   if ($checkrows > 0) {
     echo "student exists\n";
   } else {
-      if ($pass == $confirm_pass) 
-      {
-        if(!empty($_POST["fullname"]) && !empty($_POST["email"]) && !empty($_POST["gender"]) && !empty($_POST["branch"]) && !empty($_POST["phone"]) && !empty($_POST["pass"]))
-        {
+    if ($pass == $confirm_pass) {
+      if (!empty($_POST["fullname"]) && !empty($_POST["email"]) && !empty($_POST["gender"]) && !empty($_POST["branch"]) && !empty($_POST["phone"]) && !empty($_POST["pass"])) {
         //insert results from the form input
         $query = "INSERT INTO users(fullName, email, gender, branch,phone, pass) VALUES ('$fullname', '$email','$gender','$branch', '$phone', '$pass')";
 
@@ -91,83 +88,86 @@
         mysqli_close($conn);
         echo "Student Added";
       }
+    } else {
+      $p = "Password Mismatch!";
     }
-       else {
-        $p = "Password Mismatch!";
-      }
-    } 
-  
+  }
+
 
   ?>
   <div class="container">
     <?php include('header.php')  ?>
     <div class="frmblock">
-    <div class="frm">
-      
-      <form action="" method="post" class="f">
-      <h2>Sign Up</h2>
-        <div class="textname">
-          Full Name  <br>
-          <input type="text" name="fullname" value="<?php echo $fullname; ?>">
-          <span class="error">*<?php echo $fnameErr; ?></span>
-          <br>
-        </div>
-       <div class="textname">
-          Gender  <br>
-          <input type="radio" id="male" name="gender" value="male">
-          <label for="male">male</label><br>
-           <input type="radio" id="female" name="gender" value="female">
-           <label for="female">female</label><br>
-           <input type="radio" id="other" name="gender" value="other">
-          <label for="other">other</label>
-          <br>
-        </div>
-        <div class="text-name">
-                            <label for="branch">Branch:</label> <br>
-                           <select name="branch" id="branch" value="<?php echo $branch; ?>"> 
-                                <option value="CSE">CSE</option>
-                                <option value="EEE">EEE</option>
-                                <option value="LAW">LAW</option>
-                                <option value="ME">ME</option>
-                                <option value="PHARMACY">PHARMACY</option>
-                                <option value="CE">CE</option>
-                                <option value="EE">CE</option>
-                          </select>
-                        </div>
-     
-        <div class="textname">
-          Email Address  <br>
-          <input type="email" name="email" value="<?php echo $email; ?>">
-          <span class="error">*<?php echo $emailErr; ?></span>
-          <br>
-        </div>
-        <div class="textname">
-          Phone Number  <br>
-          <input type="text" name="phone" value="<?php echo $pnum; ?>">
-          <span class="error">*<?php echo $pnumErr; ?></span>
-          <br>
-        </div>
-        <div class="textname">
-          Password <br>
-          <input type="password" name="pass" value="<?php echo $pass; ?>">
-          <span class="error">*<?php echo $passErr; ?></span>
-          <br>
-        </div>
-        <div class="textname">
-          Confirm Password <br>
-          <input type="password" name="cpass" value="<?php echo $confirm_pass; ?>">
-          <span class="error">*<?php echo $p; ?></span>
+      <div class="frm">
 
-          <br>
-        </div>
-        <div class="btn">
-          <a href=""><input type="submit" name="sb"></a>
-        </div class="lh">
-        <h4>Already Registered <a href="">Login here</a></h4>
+        <form action="" method="post" class="f">
+          <h2>Sign Up</h2>
+          <div class="textname">
+            <div class="left">
+            Full Name <br>
+            <input type="text" name="fullname" value="<?php echo $fullname; ?>">
+            <span class="error">*<?php echo $fnameErr; ?></span>
+            <br>
+            </div>
+            <div class="right">
+            Email Address <br>
+            <input type="email" name="email" value="<?php echo $email; ?>">
+            <span class="error">*<?php echo $emailErr; ?></span>
+            <br>
+          </div>
+
+          </div>
+          
+          <div class="text-name3">
+            <label for="branch">Branch:</label> <br>
+            <select name="branch" id="branch" value="<?php echo $branch; ?>">
+              <option value="CSE">CSE</option>
+              <option value="EEE">EEE</option>
+              <option value="LAW">LAW</option>
+              <option value="ME">ME</option>
+              <option value="PHARMACY">PHARMACY</option>
+              <option value="CE">CE</option>
+              <option value="EE">CE</option>
+            </select>
+          </div>
+
+          <div class="textname4">
+            Gender <br>
+            <input type="radio" id="male" name="gender" value="male">
+              <label for="male">male</label><br>
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">female</label><br>
+              <input type="radio" id="other" name="gender" value="other">
+              <label for="other">other</label>
+            <br>
+          </div>
+          <div class="textname5">
+            Phone Number <br>
+            <input type="text" name="phone" value="<?php echo $pnum; ?>">
+            <span class="error">*<?php echo $pnumErr; ?></span>
+            <br>
+          </div>
+          <div class="textname6">
+            Password <br>
+            <input type="password" name="pass" value="<?php echo $pass; ?>">
+            <span class="error">*<?php echo $passErr; ?></span>
+            <br>
+          </div>
+          <div class="textname7">
+            Confirm Password <br>
+            <input type="password" name="cpass" value="<?php echo $confirm_pass; ?>">
+            <span class="error">*<?php echo $p; ?></span>
+
+            <br>
+          </div>
+          <div class="btn">
+            <a href=""><input type="submit" name="sb"></a>
+          </div class="lh">
+          <h4>Already Registered <a href="">Login here</a></h4>
 
 
-      </form>
-    </div>
+        </form>
+      </div>
     </div>
   </div>
 </body>

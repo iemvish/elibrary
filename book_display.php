@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$query = "SELECT id,book_pic, book_name, book_details, book_author, book_pub, branch, price, quantity FROM books";
+$query = "SELECT srno,book_pic, book_name, book_details, book_author, book_pub, branch, price, quantity FROM books";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -87,16 +87,17 @@ $result = mysqli_query($conn, $query);
                         ?>
                                 <tr>
                                     <td><?php echo $sn; ?> </td>
-                                    <td><?php echo $sn; ?> </td>
+                                    <td> <img src=" <?php echo $data['book_pic']; ?>" height="100px" width="100px"> </td>
                                     <td><?php echo $data['book_name']; ?> </td>
                                     <td><?php echo $data['book_details']; ?> </td>
+                                    
                                     <td><?php echo $data['book_author']; ?> </td>
                                     <td><?php echo $data['book_pub']; ?> </td>
                                     <td><?php echo $data['branch']; ?> </td>
                                     <td><?php echo $data['price']; ?> </td>
                                     <td><?php echo $data['quantity']; ?> </td>
-                                    <td class="u"><a href="<?php echo 'update.php?id='.$data['id']?>"><button class="update">Update</button></a> </td>
-                                    <td class="d"><a href="<?php echo 'delete.php?id='.$data['id'];?>"><button class="delete">Delete</button></a></td>
+                                    <td class="u"><a href="<?php echo 'update_book.php?srno='.$data['srno']?>"><button class="update">Update</button></a> </td>
+                                    <td class="d"><a href="<?php echo 'delete_book.php?srno='.$data['srno'];?>"><button class="delete">Delete</button></a></td>
                                 <tr>
                                 <?php
                                 $sn++;

@@ -1,32 +1,45 @@
-<?php  
+<?php
 session_start();
 include('config.php');
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-   $name = $_POST['name'];
-  $details = $_POST['details'];
-   $author = $_POST['author'];
-   $publisher = $_POST['publisher'];
-   $branch = $_POST['branch'];
-   $price = $_POST['price'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $files = $_FILES['file'];
+    $filename = $files['name'];
+    $fileerror = $files['error'];
+    $filetmp = $files['tmp_name'];
+    $fileext = explode('.',$filename);
+    $filecheck = strtolower(end($fileext));
+    $fileextstored = array('png','jpg','jpeg');
+
+    if(in_array($filecheck,$fileextstored))
+    {
+        $destinationfile = 'upload/'.$filename;
+        move_uploaded_file($filetmp,$destinationfile);
+    }
+    $name = $_POST['name'];
+    $details = $_POST['details'];
+    $author = $_POST['author'];
+    $publisher = $_POST['publisher'];
+    $branch = $_POST['branch'];
+    $price = $_POST['price'];
     $quantity = $_POST['quantity'];
 
-  $query = "INSERT into books(book_name,book_details,book_author,book_pub,branch,price,quantity) VALUES('$name','$details','$author','$publisher','$branch','$price','$quantity')";
-  $result = mysqli_query($conn,$query) or die('Error querying database.');
- 
 
-  if($result)
-  {
-    echo "add book succesfully";
-    header("location:book_display.php");
-  }
-  else
-  {
-    echo "failed to add book";
-  }
+    $query = "INSERT into books(book_pic,book_name,book_details,book_author,book_pub,branch,price,quantity) VALUES('$destinationfile','$name','$details','$author','$publisher','$branch','$price','$quantity')";
+    $result = mysqli_query($conn, $query) or die('Error querying database.');
 
+
+    if ($result) {
+        echo "add book succesfully";
+        header("location:book_display.php");
+    } else {
+        echo "failed to add book";
+    }
+
+   
 }
+
+
 
 ?>
 
@@ -59,12 +72,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <div class="mainblock">
             <?php include('sidebar.php'); ?>
             <div class="dashright">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <h2>Add Book</h2>
                     <div class="textname">
                         Book picture <br>
-                        <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Upload" name="submit">
+                        <input type="file" name="file" id="file">
                     </div>
 
                     <div class="textname">
@@ -104,4 +116,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 </body>
 
 </html>
-

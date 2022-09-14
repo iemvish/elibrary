@@ -12,28 +12,83 @@
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/mystyle.css">
 </head>
-
+<style>
+    .block1 img{
+        width: 100%;
+    }
+    body{
+    margin: 0;
+}
+.block1{
+    /* background-image: url('images/lb1.jpg');*/
+    background: linear-gradient(0,rgba(255,255,255,0) 0%, rgba(0,0,0, .8) 110%), url("images/lb1.jpg"); 
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    background-size: cover;
+    height: 900px;
+    position: relative;
+}
+.sidebar{
+    float: left;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+    transition: width 2s;
+    width: 100%;
+}
+.sidebarmenu{
+    color: white;
+}
+.sidebarmenu li{
+    list-style: none;
+}
+.sidebarmenu li a{
+    text-decoration: none;
+    color: white;
+}
+.play{
+    color: white;
+    text-align: end;
+    
+}
+.play i{
+    font-size: 30px;
+    text-align: -webkit-right;
+    padding-right: 50px;
+}
+</style>
 <body>
     <div class="container">
-    <?php include('header.php');?>
+    <div class="sidebar">
+        <div class="play">
+        <i id="side2" class="fa-solid fa-circle-xmark"></i>
+        </div>
+    
+                <ul class="sidebarmenu">
+                    <li><h1><a href=""> ABOUT US</a></h1></li>
+                    <li><h1><a href="">GALLERY</a></h1></li>
+                    <li><h1><a href="">COMPLAIN</a></h1></li>
+                    <li><h1><a href="">APNI SHOP</a></h1></li>
+                    <li><h1><a href="">LIB</a></h1></li>
+                </ul>
+            </div>
         <div class="block1">
-            <div class="b1txt">
+            <?php include('header.php') ?>
+            <!--<img src="images/lb1.jpg" alt="">
+           <div class="b1txt">
                 <div class="part1">
                     <h1>elibrary</h1>
-                    <h1> Library Management</h1>
+                    <h1> Library Management System</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
                         unknown printer Lorem Ipsum has been the industry's</p>
                     <a href=""><button class="btn">Read More</button></a>
                     <a href=""><button class="btna">Purchases Now</button></a>
                 </div>
-            </div>
-
-            <div class="part2">
-
-                <img src="images\l1.jpg" alt="">
-
-            </div>
+            </div> -->
         </div>
 
         <div class="block2">
@@ -658,13 +713,14 @@
 
     <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/6070b0cce0.js" crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')
     </script>
 
     <!-- FlexSlider -->
     <script defer src="js/jquery.flexslider.js"></script>
-
+    <script src="js/custom.js"></script>
     <script type="text/javascript">
         $(window).load(function() {
             $('.flexslider').flexslider({

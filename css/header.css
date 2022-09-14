@@ -2,14 +2,13 @@
 {
     width: 100%;
     float: left;
-    background-color: #0674DB;
-    color: #87C1FF;
+   background-color: none;   
+   color: slategray; 
 }
 .hleft
 {
     width: 30%;
     float: left;
-    padding: 5px
 }
 .hright{
     float: left;
@@ -19,10 +18,10 @@
     margin: 0;
 }
 .white_c{
-    color: white;
+    color: black;
 }
 .header a{
-    color: #87C1FF;
+    color: black;
 }
 body{
     margin: 0;
@@ -30,23 +29,25 @@ body{
 }
 
 .hright .navbar ul li{
-    position: relative;
-    float: left;
-    padding-right: 25px;
+    display: inline-block;
+    list-style: none;
 }
 
-.hright .navbar ul a li{
-    display: block;
-}
-.hright .navbar
-{
-    padding-top: 20px;
-}
-.hright .navbar ul a:hover{
-    background-color: red;
-    color: white;
+.hright .navbar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 32px 50px;
 }
 
+.hright .navbar ul li a:hover{
+    background-color: white;
+    color: #0674DB;
+}
+
+.menu{
+    margin: 0;
+    padding: 0;
+}
 .dropdown {
     position: relative;
     display: inline-block;

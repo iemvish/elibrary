@@ -2,11 +2,19 @@
     width: 100%;
     font-family: 'Poppins', sans-serif;
     float: left;
+    margin: 0;
+    
 }
-
-.block1 {
+body{
+    margin: 0;
+}
+.block1{
     width: 100%;
     float: left;
+    background-image: url('images/lb1.jpg');
+    background-size: cover;
+    height: 600px;
+ 
 }
 
 .block1 .b1txt {

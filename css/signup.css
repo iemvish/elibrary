@@ -1,0 +1,125 @@
+.container{
+    width: 100%;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+  
+    
+}
+
+.main_block{
+    width: 100%;
+    float: left;
+   padding: 300px;
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 80px;
+   background-image: url(images/girl.jpg);
+   background-size: cover;
+    
+}
+
+.left-block{
+    width: 50%;
+    float: left;
+    height: 513px;
+
+}
+.left-block img{
+    width: 100%;
+    height: 531px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 27px;
+}
+
+.right-block{
+    width: 50%;
+    float: left;
+
+}
+
+.form-text{
+    width: 100%;
+    float: left;
+    margin-bottom: 28px;
+}
+.form-text span{
+    float: left;
+    width: 50%;
+}
+.form-text label{
+    margin-right: 35px;
+}
+.form-text input[type = 'text'],
+.form-text input[type = 'email'],
+.form-text input[type = 'password'],
+.form-text select   
+{
+    width : 88%;
+    border: 2px solid grey;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.form
+{
+    float: left;
+    background-color: #467DDB;
+    color: white;
+    padding: 0px 38px 57px 21px;
+}
+.form-btn2 input[type='submit'] {
+    background-color: #467DDB;
+    color: white;
+    padding: 8px 35px 8px 35px;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 20px;
+    float: left;
+    margin-left: 130px;
+}
+
+.form-text select   
+{
+    width: 94%;
+}
+.text1{
+    float: left;
+    width: 50%;
+}
+
+.form-btn{
+    float: left;
+    width: 100%;
+}
+
+.main{
+   /* padding: 300px;
+    padding-top: 75px;*/
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    /*padding-bottom: 15px;*/
+    
+
+}
+.row
+{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.main-block-content
+{
+    width: 100%;
+    float: left;
+  /*  background-color: white;*/
+   /* border: 1px solid black; */
+    border-radius: 28px;
+}
+ 
+
+.text-center
+{
+    text-align: center;
+}
