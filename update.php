@@ -9,7 +9,7 @@ if (isset($_REQUEST['srno']) && !empty($_REQUEST['srno'])) {
         $tname = $_REQUEST['fullName'];
         $email = $_REQUEST['email'];
         $gender = $_REQUEST['gender'];
-        $tbranch = $_REQUEST['branch'];
+        $tbranch = $_REQUEST['tbranch'];
         $phone = $_REQUEST['phone'];
         $pass = $_REQUEST['pass'];
         $update = "UPDATE users SET fullName='$tname', email='$email',gender='$gender',branch='$tbranch', phone='$phone',pass='$pass' WHERE srno='$id'";
@@ -53,28 +53,27 @@ if (isset($_REQUEST['srno']) && !empty($_REQUEST['srno'])) {
                 Email id: <br>
                 <input type="email" name="email" value="<?php echo $data['email']; ?>"> <br>
             </div>
-
             <div class="text-name">
                 Gender: <br>
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="male" name="gender" value="1"  <?php if($data['gender'] == 1){echo "checked";}?>>
                   <label for="male">male</label><br>
-                  <input type="radio" id="female" name="gender" value="female">
+                  <input type="radio" id="female" name="gender" value="0" <?php if($data['gender'] == 0){echo "checked";}?>>
                   <label for="female">female</label><br>
-                  <input type="radio" id="other" name="gender" value="other">
-                  <label for="other">other</label>
+                  <input type="radio" id="other" name="gender" value="2" <?php if($data['gender'] == 2){echo "checked";}?>>
+                 <label for="other">other</label>
             </div>
 
             <div class="text-name">
                 <label for="tbranch">Branch:</label> <br>
 
-                <select name="tbranch" id="tbranch" value="<?php echo $data['branch']; ?>">
-                    <option value="CSE">CSE</option>
-                    <option value="EEE">EEE</option>
-                    <option value="LAW">LAW</option>
-                    <option value="ME">ME</option>
-                    <option value="PHARMACY">PHARMACY</option>
-                    <option value="CE">CE</option>
-                    <option value="EE">CE</option>
+                <select name="tbranch" id="tbranch">
+                    <option value="1" <?php if($data['branch'] == 1){echo "selected";}?>>CSE</option>
+                    <option value="2" <?php if($data['branch'] == 2){echo "selected";}?>>EEE</option>
+                    <option value="3" <?php if($data['branch'] == 3){echo "selected";}?>>LAW</option>
+                    <option value="4" <?php if($data['branch'] == 4){echo "selected";}?>>ME</option>
+                    <option value="5" <?php if($data['branch'] == 5){echo "selected";}?>>PHARMACY</option>
+                    <option value="6" <?php if($data['branch'] == 6){echo "selected";}?>>CE</option>
+                    <option value="7" <?php if($data['branch'] == 7){echo "selected";}?>>CE</option>
 
 
                 </select>

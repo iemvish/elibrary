@@ -75,19 +75,7 @@
                 </ul>
             </div>
         <div class="block1">
-            <?php include('header.php') ?>
-            <!--<img src="images/lb1.jpg" alt="">
-           <div class="b1txt">
-                <div class="part1">
-                    <h1>elibrary</h1>
-                    <h1> Library Management System</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                        unknown printer Lorem Ipsum has been the industry's</p>
-                    <a href=""><button class="btn">Read More</button></a>
-                    <a href=""><button class="btna">Purchases Now</button></a>
-                </div>
-            </div> -->
+            <?php include('header.php')?>
         </div>
 
         <div class="block2">

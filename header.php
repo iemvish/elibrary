@@ -53,6 +53,7 @@ body{
     display: inline-block;
     text-decoration: none;
     padding: 15px 40px;
+    margin-bottom: 10px;
 }
 
 .hright .navbar ul li a:hover{
@@ -117,12 +118,13 @@ body{
             error_reporting(0);
             session_start();
             
-            if($_SESSION['email'])
-            {
-            }
+            if(isset($_SESSION['email']))
+            {?>
+                <li><a href="logout.php">LOGOUT</a> </li>
+          <?php  }
             else
             { ?>
-                <li><a href="signup.php">SIGN UP</a></li>
+                <li><a href="login.php">SIGN IN</a></li>
           <?php  }?>
             
              
@@ -130,14 +132,12 @@ body{
                
                if(isset($_SESSION['email']))
             {  ?>
-                <li><a href="logout.php">LOGOUT</a> </li>
                 <li><a href="event.php">dashboard</a></li>
          <?php  
           }
             else
             {   ?>
-        
-                    <li><a href="login.php">LOGIN </a></li>
+                    <li><a href="signup.php">SIGN UP </a></li>
                <?php  }?>  
                 <li><a href="">BLOG</a></li>
                 <li><a href="">PAGES</a></li>
