@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2>Add Book</h2>
                     <div class="textname">
                         Book picture <br>
-                        <input type="file" name="file" id="file">
+                        <input type="file" name="file">
                     </div>
 
                     <div class="textname">
