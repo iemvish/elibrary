@@ -1,11 +1,10 @@
 <?php
 session_start();
 error_reporting(0);
-/*
-if(isset($_SESSION['email']))
-{
+
+if (isset($_SESSION['email'])) {
     header("location:event.php");
-}*/
+}
 $email = $password = $msg = $emsg = "";
 $emailErr = $passErr = "";
 if (isset($_POST["sb"])) {
@@ -71,6 +70,36 @@ function test_input($data)
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/mystyle1.css">
     <style>
+        input[type="submit"] {
+            padding: 18px 75px 18px 75px;
+            /* border: 3px solid white; */
+            border: none;
+            border-radius: 30px;
+            background: none;
+            /* background: linear-gradient(to right, #e23826  50%, #f3701d 50%) no-repeat scroll right bottom/210% 100% #f3701d; */
+            background-color: #F3701D;
+            font-size: 15px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .textname {
+            position: relative;
+        }
+
+        .btn {
+            padding-left: 80px;
+            padding-top: 30px;
+        }
+
+        .btn :hover {
+            background-color: #e23826;
+            /* padding: 19px 75px 19px 75px; */
+            border-radius: 30px;
+            border: none;
+            color: white;
+        }
+
         .msg {
             color: red;
             text-align: center;
@@ -81,32 +110,41 @@ function test_input($data)
             background: linear-gradient(0, rgba(255, 255, 255, 0) -190%, rgba(0, 0, 0, .8) 110%), url("images/lb2.jpg");
             background-size: cover;
             width: 100%;
-            height: 610px;
+            height: 100vh;
         }
 
-        .frm{
+        .frm {
             background-color: rgba(0, 0, 0, 0.45);
             backdrop-filter: blur(3px);
         }
-        form p {
+
+        /* form p {
             text-align: end;
             padding-right: 14px;
             margin: 0;
+        } */
+
+        .user i,
+        .pass i {
+            font-size: 28px;
+            float: left;
+            position: absolute;
+            left: 30px;
+            color: black;
+            top: 24%;
+            left: 15px;
+
         }
-       .user i,.pass i{
-        font-size: 28px;
-        float: left;
- 
+
+        .user,
+        .pass {
+            float: left;
+            padding: 6px;
+            padding-right: 12px;
+            width: 100%;
+            padding-bottom: 0;
+        }
         
-       }
-       .user,.pass{
-        float: left;
-        padding: 6px;
-    padding-right: 12px;
-    padding-top: 17px;
-}
-        
-       
     </style>
 </head>
 
@@ -118,31 +156,39 @@ function test_input($data)
 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="f">
                     <h2>Login to eLibrary</h2>
-                    <p><a href="">Create an account</a></p>
+                    
                     <div class="textname">
                         <!-- Email Address <br> -->
                         <div class="user">
-                        <i id='user'class="fa-solid fa-user"></i>
+                            <i id='user' class="fa-solid fa-user"></i>
+                            <input type="email" name="email" placeholder="Username"><br>
                         </div>
-                        
-                        <input type="email" name="email" placeholder="Username"><br>  
-                        <span class="error">*<?php echo $emailErr; ?></span>
-                        <br>
+                         <span class="error">*<?php echo $emailErr; ?></span>
+                   
                     </div>
                     <div class="textname">
                         <!-- Password <br> -->
                         <div class="pass">
-                        <i class="fa-solid fa-lock"></i>
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="pass" placeholder="Password"><br>
                         </div>
-                        
-                        <input type="password" name="pass" placeholder="Password"><br>
-                        <span class="error">*<?php echo $passErr; ?></span>
-                        <br>
+                         <span class="error">*<?php echo $passErr; ?></span>
+                    
                     </div>
                     <div class="btn">
-                        <a href=""><input type="Submit" name="sb" value="Log In"></a>
+                        <a href=""><input type="submit" name="sb" value="Log In"></a>
                     </div>
-                    <a href="#">Forget Password!</a>
+                    <div class="foot">
+                        <div class="forget">
+                        <a href="#">Forget Password!</a>
+                        </div>
+                        <div class="create">
+                        <a href="">Create an account</a>
+                        </div>
+                    
+                    
+                    </div>
+              
                     <div class="msg">
                         <?php echo "$msg" ?>
                     </div>
@@ -155,11 +201,7 @@ function test_input($data)
         </div>
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/6070b0cce0.js" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')
-    </script>
 
 </body>
 

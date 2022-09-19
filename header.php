@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         .header
-{
+{   background: linear-gradient(0, rgba(255, 255, 255, 0) -190%, rgba(0, 0, 0, .8) 110%), url(images/lb1.jpg);
     width: 100%;
     float: left; 
    color: white; 
@@ -56,9 +56,14 @@ body{
     margin-bottom: 10px;
 }
 
-.hright .navbar ul li a:hover{
+/* .hright .navbar ul li a:hover{
     background-color: white;
     color: black;
+} */
+.hright .navbar ul li a:hover{
+    /* background-color: white; */
+    color: #e23826;
+    font-weight: 600;
 }
 
 .menu{
@@ -94,6 +99,10 @@ body{
   .color-w{
     color: white;
   }
+  .white_c{
+    color: #f3701d;
+  }
+  
   
     </style>
 </head>
@@ -104,7 +113,7 @@ body{
         <a href="index.php">
             <div class="hleft">
                 <div class="logo">
-                <p><b class="white_c">e</b>Library</p>
+                <p><b class="white_c"><span>e</span></b>Library</p>
                 </div>
                
             </div>
@@ -115,8 +124,8 @@ body{
            
             <li></i><a href="index.php">HOME</a></li>
             <?php 
-            error_reporting(0);
-            session_start();
+           
+           
             
             if(isset($_SESSION['email']))
             {?>
@@ -132,7 +141,7 @@ body{
                
                if(isset($_SESSION['email']))
             {  ?>
-                <li><a href="event.php">dashboard</a></li>
+                <li><a href="event.php">Dashboard</a></li>
          <?php  
           }
             else

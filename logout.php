@@ -4,5 +4,5 @@ session_start();
 session_unset();
 //print_r($_SESSION);
 session_destroy();
-header("location:login.php");
+header("location:index.php");
 ?>

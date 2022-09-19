@@ -104,14 +104,15 @@ body{
 .block2 {
     width: 100%;
     float: left;
-    margin-top: 65px;
+    padding-top: 65px;
     text-align: center;
 }
 
 .block3 {
     width: 100%;
-    margin-top: 60px;
+    padding-top: 60px;
     float: left;
+    padding-bottom: 50px;
 }
 
 .block3 .part1 {

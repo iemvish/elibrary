@@ -13,4 +13,11 @@ $(document).ready(function(){
         $('.sidebar').hide(1000);
         $('.block1').css("filter","blur(0px)");
     });
+
+    $('#i2').click(function(){
+        $('.dropdown-content').css("display,block");
+
+    })
+
+    
 });

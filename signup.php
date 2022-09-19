@@ -35,24 +35,25 @@
         width: 100%;
         float: left;
         background-size: cover;
-        height: 758px;
+        height: 100vh;
     }
 
     .mainblock-content {
         position: absolute;
-        /* top: 5%; */
+        /* top: 20%; */
         left: 63%;
         float: left;
-        background-color: rgba(0, 0, 0, -0.39);
-        backdrop-filter: blur(1px);
-        height: 750px;
+    margin-top: 70px;
+        
     }
 
     form {
         /* width: 100%; */
         color: white;
-        padding-top: 25px;
         float: left;
+        background-color: rgba(0, 0, 0, -0.39);
+        backdrop-filter: blur(1px); 
+        margin-top: 30px;
     }
 
     .form-text {
@@ -105,10 +106,14 @@
     }
 
     form input[type='submit'] {
-        padding: 10px 60px 10px 60px;
-        border: 3px solid white;
-        border-radius: 20px;
+        padding: 19px 75px 19px 75px;
+        /* border: 3px solid white; */
+        border: none;
+        border-radius: 30px;
         background: none;
+        /* background: linear-gradient(to right, #e23826  50%, #f3701d 50%) no-repeat scroll right bottom/210% 100% #f3701d; */
+        background-color: #F3701D;
+       font-size: 15px;
         color: white;
 
     }
@@ -121,8 +126,16 @@
         margin-top: 80px;
         width: 100%;
         text-align: center;
+       
     }
-
+    .form-btn2 :hover{
+        background-color:#e23826;
+        
+        /* background :linear-gradient(to right, #e23826 50%, #f3701d 50%) no-repeat scroll right bottom/210% 100% #f3701d; */
+        padding: 19px 75px 19px 75px;
+        border: none;
+        color: white;
+    }
     .text-center {
         border-bottom: 3px solid;
         width: 100%;
@@ -145,7 +158,7 @@
 
 <body>
     <?php
-    error_reporting(0);
+
     // define variables and set to empty values
     $fnameErr = $emailErr = $pnumErr = $passErr = $cpassErr = $p = "";
     $fname = $email = $pnum = $pass = $confirmpass = "";
@@ -201,14 +214,14 @@
     }
 
     include "config.php";
-    $fullname = $_POST['fullName'];
-    $email = $_POST['email'];
-    $gender = $_POST['gender'];
-    $branch = $_POST['branch'];
-    $sem = $_POST['sem'];
-    $phone = $_POST['phone'];
-    $pass = $_POST['pass'];
-    $confirm_pass = $_POST['cpass'];
+    @$fullname = $_POST['fullName'];
+    @$email = $_POST['email'];
+    @$gender = $_POST['gender'];
+    @$branch = $_POST['branch'];
+    @$sem = $_POST['sem'];
+    @$phone = $_POST['phone'];
+    @$pass = $_POST['pass'];
+    @$confirm_pass = $_POST['cpass'];
 
     $check = mysqli_query($conn, "select * from users where fullname='$fullname' and email='$email'");
     $checkrows = mysqli_num_rows($check);
@@ -216,12 +229,13 @@
     if ($checkrows > 0) {
         echo "student exists\n";
     } else {
-        if ($pass == $confirm_pass) {
-            if (!empty($_POST["fullName"]) && !empty($_POST["email"]) && !empty($_POST["gender"]) && !empty($_POST["branch"]) && !empty($_POST["phone"]) && !empty($_POST["pass"])) {
+        if ($pass == $confirm_pass) {           
+            if (!empty($_POST["fullName"]) && !empty($_POST["email"]) && !empty($_POST["gender"]) 
+            && !empty($_POST["branch"]) && !empty($_POST["phone"]) && !empty($_POST["pass"])) {
                 //insert results from the form input
                 
                 $query = "INSERT INTO users(fullName,email,gender,branch,sem,phone,pass,role) VALUES ('$fullname', '$email','$gender','$branch','$sem','$phone','$pass','3')";
-
+                //  dd($query);
                 $result = mysqli_query($conn,$query);
                 // mysqli_close($conn);
                 
@@ -241,7 +255,9 @@
     <div class="container">
         <div class="main">
             <div class="main-block">
+            <?php include('header.php') ?>
                 <div class="mainblock-content">
+                   
                     <div class="form">
                         <div class="form-content">
 
@@ -258,9 +274,9 @@
                                         <!-- Email Id: <br> -->
                                         <select class="gender" name="gender" id="">
                                             <option value="">Select Gender</option>
-                                            <option value="1" <?php if($_POST['gender'] == 1){echo "checked";}?>>Male</option>
-                                            <option value="0" <?php if($_POST['gender'] == 0){echo "checked";}?>>Female</option>
-                                            <option value="2" <?php if($_POST['gender'] == 2){echo "checked";}?>>Other</option>
+                                            <option value="2" <?php if(isset($_POST['gender']) &&  $_POST['gender'] == 2){echo "selected";}?>>Male</option>
+                                            <option value="1" <?php  if(isset($_POST['gender']) &&  $_POST['gender'] == 1){echo "selected";}?>>Female</option>
+                                            <option value="3" <?php  if(isset($_POST['gender']) &&  $_POST['gender'] == 3){echo "selected";}?>>Other</option>
                                         </select>
                                         <br>
                                     </div>
@@ -298,27 +314,27 @@
                                     <div class=" text2 sem">
                                         <select name="sem" id="" name="sem">
                                             <option value="">Select Semester</option>
-                                            <option value="1">First</option>
-                                            <option value="2">Second</option>
-                                            <option value="3">Third</option>
-                                            <option value="4">Fourth</option>
-                                            <option value="5">Fifth</option>
-                                            <option value="6">Six</option>
-                                            <option value="7">Seventh</option>
-                                            <option value="8">Eighth</option>
+                                            <option value="1"  <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 1) {echo "selected";}?>>First</option>
+                                            <option value="2"  <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 2) {echo "selected";}?>>Second</option>
+                                            <option value="3" <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 3) {echo "selected";}?>>Third</option>
+                                            <option value="4" <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 4) {echo "selected";}?>>Fourth</option>
+                                            <option value="5" <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 5) {echo "selected";}?>>Fifth</option>
+                                            <option value="6" <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 6) {echo "selected";}?>>Six</option>
+                                            <option value="7" <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 7) {echo "selected";}?>>Seventh</option>
+                                            <option value="8" <?php if(isset($_POST['sem']) &&  $_POST['sem'] == 8) {echo "selected";}?>>Eighth</option>
                                         </select>
                                     </div>
                                     <div class="text2"><select class="gender" id="" name="branch">
                                             <option value="">Select Branch</option>
-                                            <option value="1" >CSE</option>
-                                            <option value="2">EEE</option>
-                                            <option value="3">CE</option>
-                                            <option value="4">ECE</option>
+                                            <option value="1" <?php if(isset($_POST['branch']) &&  $_POST['branch'] == 1){echo "selected";}?>>CSE</option>
+                                            <option value="2" <?php if(isset($_POST['branch']) &&  $_POST['branch'] == 2){echo "selected";}?>>EEE</option>
+                                            <option value="3" <?php if(isset($_POST['sem']) &&  $_POST['branch'] == 3){echo "selected";}?>>CE</option>
+                                            <option value="4" <?php if(isset($_POST['branch']) &&  $_POST['branch'] == 4){echo "selected";}?>>ECE</option>
                                         </select></div>
 
                                 </div>
                                 <div class="form-btn2">
-                                    <input type="submit" value="SIGN UP">
+                                    <input id="btn2" type="submit" value="SIGN UP">
                                 </div>
                                 <p class="f">Already Registered! <a href="">SIGN IN</a></p>
 
@@ -329,6 +345,11 @@
                     </div>
                 </div>
             </div>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/6070b0cce0.js" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')
+    </script>
 </body>
 
 </html>

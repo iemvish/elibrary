@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,6 +64,9 @@
     text-align: -webkit-right;
     padding-right: 50px;
 }
+.block2,.block3{
+    background-color: #F2F0EE;
+}
 </style>
 <body>
     <div class="container">
@@ -72,6 +81,12 @@
                     <li><h1><a href="">COMPLAIN</a></h1></li>
                     <li><h1><a href="">APNI SHOP</a></h1></li>
                     <li><h1><a href="">LIB</a></h1></li>
+                    <?php
+                    if(isset($_SESSION['email']))
+                    {?>
+                        <li><h1><a href="logout.php">LOG OUT</a></h1></li>
+                   <?php } 
+                    ?>
                 </ul>
             </div>
         <div class="block1">

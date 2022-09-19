@@ -4,9 +4,13 @@ if (isset($_REQUEST['srno']) && !empty($_REQUEST['srno'])) {
     $id = $_GET['srno'];
     $query = "SELECT book_pic, book_name, book_details, book_author, book_pub, branch, price, quantity FROM books WHERE srno = '$id'";
     $result = mysqli_query($conn, $query);
-
     if (isset($_REQUEST['submit'])) {
         $files = $_FILES['file'];
+        $filename = $files['name'];
+        $filetmp = $files['tmp_name'];
+        $destinationfile = 'upload/'.$filename;
+        move_uploaded_file($filetmp,$destinationfile);
+        
         $name = $_POST['name'];
         $details = $_POST['details'];
         $author = $_POST['author'];
@@ -16,17 +20,13 @@ if (isset($_REQUEST['srno']) && !empty($_REQUEST['srno'])) {
         $quantity = $_POST['quantity'];
 
 
-        $update = "UPDATE books SET book_pic='$files', book_name='$name',book_details='$details',book_author='$author', book_pub='$publisher',branch='$branch', price='$price', quantity='$quantity' WHERE srno='$id'";
-
-        try {
-            $result = mysqli_query($conn, $update);
-            header("location:book_display.php?msg=Record Updated Successfully.");
+        $update = "UPDATE books SET book_pic='$destinationfile', book_name='$name',book_details='$details',book_author='$author', book_pub='$publisher',branch='$branch', price='$price', quantity='$quantity' WHERE srno='$id'";
+       
+        $result = mysqli_query($conn,$update);
+        if($result){
+            header("location:book_display.php");
         }
-
-        //catch exception
-        catch (Exception $e) {
-            header("location:book_display.php?error=!OOPs Some Technical Error.");
-        }
+       
     }
 ?>
 
@@ -42,15 +42,16 @@ if (isset($_REQUEST['srno']) && !empty($_REQUEST['srno'])) {
     </head>
 
     <body>
-        <form action="" method="post">
-            <h2>Add Teacher</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <h2>Update book details</h2>
             <div class="text-name">
 
                 <?php if (mysqli_num_rows($result) > 0) {
                     if ($data = mysqli_fetch_assoc($result)) { ?>
                         <div class="text-name">
                             Book pic <br>
-                            <input type="file" name="file" id="file" value="<?php echo $data['book_pic']; ?>"> <br>
+                            <img src=" <?php echo $data['book_pic']; ?>" height="100px" width="100px"> 
+                            <input type="file" name="file" id="file"> <br>
                         </div>
 
                         <div class="textname">
