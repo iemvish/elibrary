@@ -141,7 +141,7 @@ body{
                
                if(isset($_SESSION['email']))
             {  ?>
-                <li><a href="event.php">Dashboard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
          <?php  
           }
             else

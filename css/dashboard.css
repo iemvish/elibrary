@@ -1,15 +1,20 @@
-.container
-{
+.container {
     width: 100%;
     float: left;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+/* .main{
+    width: 100%;
+    float: left;
+} */
+body {
     margin: 0;
     background-color: #F0F2F5;
 }
+
 /* sidebar css */
-.sidebar{
+.sidebar {
     width: max-content;
     float: left;
     background-color: #3E3E45;
@@ -20,91 +25,228 @@ body{
     color: white;
 }
 
-.sidebar-top{
+.sidebar-top {
     font-size: 25px;
     text-align: center;
     padding: 8px;
     border-bottom: 2px solid;
     margin-bottom: 45px;
 }
-.sidebar-top i{
+
+.sidebar-top a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-top i {
     color: white;
     padding-right: 6px;
 }
-.sidebar-top h3{
-  text-align: center;
-  color: white;
-  padding: 10px;
+
+.sidebar-top h3 {
+    text-align: center;
+    color: white;
+    padding: 10px;
 }
-.sidebar-menu li{
+
+.sidebar-menu li {
     list-style: none;
     padding-bottom: 50px;
 }
-.sidebar-menu li a{
+
+.sidebar-menu li a {
     color: white;
     text-decoration: none;
-    
+
 }
-.sidebar-menu{
+
+.sidebar-menu {
     padding-left: 20px;
     padding-right: 15px;
 }
-.icon1{
+
+.icon1 {
     float: left;
-    margin-right: 40px;
+    width: 100%;
 }
-.icon2{
+
+.icon2 {
     float: right;
+    width: 100%;
 }
-.icon1 i{
+
+.icon1 i {
     color: white;
     padding-right: 8px;
-   
-    
+
+
 }
-#icon2 i{
+
+#icon2 i {
     color: white;
     padding-left: 40px;
     float: right;
 }
 
-.dropdown-content{
+.dropdown-content {
     padding-top: 25px;
     position: absolute;
     width: min-content;
-   display:none
-   
+    display: none
 }
-.dropdown-content a{
+
+.dropdown-content a {
     color: #3E3E45;
 }
+
 /* header */
-.header{
+.header {
+    width: 83%;
     float: left;
-    width:max-content;
-    background-color: #3E3E45;
-    height: min-content;
+    background-color: white;
     margin-top: 16px;
     border-radius: 10px;
     margin-left: 8px;
-    color: white;
-    
+    color: black;
+
 }
-.header-content a{
+
+.header-content {
+    width: 100%;
+}
+
+.header-content a {
     color: black;
     text-decoration: none;
 }
-.header-content{
-    padding: 10px;
-    width: 100%;
+
+.header-content-block {
+    height: max-content;
+    padding: 15px;
+    margin-bottom: 33px;
 }
-.user{
+
+.searchbar input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid darkseagreen;
+
+}
+
+.user {
     text-align: end;
     float: right;
     width: max-content;
-   
+
 }
-.searchbar{
-    width: max-content;
+
+.searchbar {
+    width: 80%;
+    float: left;
+}
+
+.searchbar-content {
+    width: 100%;
+}
+
+.search {
+    width: 3%;
+    float: left;
+    padding-right: 5px;
+}
+
+.search i {
+    padding-top: 8px;
+}
+
+.search-box {
+    float: left;
+    width: 30%;
+}
+
+.user a {
+    padding-left: 40px;
+}
+
+/* main dashboard */
+.dash {
+    width: 84%;
+    margin-left: 238px;
+    margin-top: 6%;
+    color: white;
+}
+
+.dash-main {
+    width: 99%;
+    float: left;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+.dash-main .block1 {
+    width: 32%;
+    background-color: #0070C0;
+    height: 120px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.dash-main .block2 {
+    width: 32%;
+    background-color: #0070C0;
+    height: 120px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.dash-main .block3 {
+    width: 32%;
+    background-color: #0070C0;
+    height: 120px;
+    float: left;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.dash-main .block4 {
+    width: 32%;
+    background-color: #0070C0;
+    height: 120px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.dash-main .block5 {
+    width: 32%;
+    background-color: #ED7D31;
+    height: 120px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.dash-main .block6 {
+    width: 32%;
+    background-color: #ED7D31;
+    height: 120px;
+    float: left;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.dash-main-content{
+    width: 100%;
+}
+
+.icons
+{
+    width: 100%;
     float: left;
 }

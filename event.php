@@ -19,7 +19,7 @@ if ($_SESSION['email'] == NULL) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard.css">
     <title>dashboard</title>
-
+    
 </head>
 
 <body>
@@ -27,23 +27,26 @@ if ($_SESSION['email'] == NULL) {
         <div class="sidebar">
             <div class="sidebar-content">
                 <div class="sidebar-top">
-                <i class="fa-solid fa-book-open"></i><b>e</b>Library
+                <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
+                    <a href="index.php" class="main-icon"> <i class="fa-solid fa-book-open"></i><b>e</b>Library</a>
+
                 </div>
                 <div class="sidebar-main">
                     <ul class="sidebar-menu">
                         <li class="sidebar-item">
                             
                             <div class="dropdown">
-                            <a href="">
-                                <div class="icons">
-                                    <div class="icon1">
-                                        <i class="fa-solid fa-house-user"></i>Dashboard
+                                <a href="">
+                                    <div class="icons">
+                                        <div class="icon1">
+                                            <i class="fa-solid fa-house-user"></i>
+                                            <span class="menu-text">Dashboard</span>
+                                        </div>
+                                        <!-- <div class="icon2">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    </div> -->
                                     </div>
-                                    <div class="icon2">
-                                        <i id="i1" class="fa-solid fa-angle-down"></i>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
                             </div>
                             <div class="dropdown-content">
                                 <a href="">Profile</a>
@@ -55,23 +58,9 @@ if ($_SESSION['email'] == NULL) {
                             <a href="">
                                 <div class="icons">
                                     <div class="icon1">
-                                        <i class="fa-solid fa-user-graduate"></i>Librarian
-                                    </div>
-                                    <div class="icon2">
-                                        <i class="fa-solid fa-angle-down"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a href="">
-                                <div class="icons">
-                                    <div class="icon1">
-                                        <i class="fa-solid fa-users"></i>Student's
-                                    </div>
-                                    <div class="icon2">
-                                        <i class="fa-solid fa-angle-down"></i>
+                                        <i class="fa-solid fa-user-graduate"></i>
+                                        <span class="menu-text">Librarian</span>
+                                        <i class="fa-solid fa-angle-right"></i>
                                     </div>
                                 </div>
                             </a>
@@ -81,10 +70,21 @@ if ($_SESSION['email'] == NULL) {
                             <a href="">
                                 <div class="icons">
                                     <div class="icon1">
-                                        <i class="fa-solid fa-users"></i>Teacher's
+                                        <i class="fa-solid fa-users"></i>
+                                        <span class="menu-text">Student's</span>
+                                        <i class="fa-solid fa-angle-right"></i>
                                     </div>
-                                    <div class="icon2">
-                                        <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="">
+                                <div class="icons">
+                                    <div class="icon1">
+                                        <i class="fa-solid fa-users"></i>
+                                        <span class="menu-text">Teacher's</span>
+                                        <i class="fa-solid fa-angle-right"></i>
                                     </div>
                                 </div>
                             </a>
@@ -95,29 +95,80 @@ if ($_SESSION['email'] == NULL) {
         </div>
 
         <div class="header">
-            <div class="header-content">
-                <div class="searchbar">
-                    <input type="text" placeholder="Search">
-                </div>
-                <div class="user">
-                <?php
-                $username = $_SESSION['email'];
-                $query = "select * from users WHERE email = '$username'";
-                $run = mysqli_query($conn,$query);
-                if($a = mysqli_fetch_array($run)){?>
-                Hey!<?php
-                echo $a['fullName'];}
-                ?>
-                <a  href="logout.php">Logout</a>
-                </div>
-               
+            <div class="header-content-block">
+                <div class="header-content">
+                    <div class="searchbar">
+                        <div class="searchbar-content">
+                            <div class="search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search">
+                            </div>
 
+                        </div>
+                    </div>
+                    <div class="user">
+                        <?php
+                        $username = $_SESSION['email'];
+                        $query = "select * from users WHERE email = '$username'";
+                        $run = mysqli_query($conn, $query);
+                        if ($a = mysqli_fetch_array($run)) { ?>
+                            Hey!<?php
+                                echo $a['fullName'];
+                            }
+                                ?>
+                            <a href="logout.php">Logout</a>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div class="dash">
+            <div class="main">
+                <div class="dash-main">
+                    <div class="dash-main-content">
+                        <div class="block1">
+                            <div class="text">
+                            <h2>TOTAL STUDENT'S</h2>
+                            </div>
+                          
+                          <?php
+                          $query = "select * from users WHERE role=3";
+                          $result = mysqli_query($conn,$query);
+                          $check = mysqli_num_rows($result);?>
+                          <h1><?php echo $check; ?></h1>
+                        
+                        </div>
+                        <div class="block2">
+                        <h2>TOTAL TEACHER'S</h2>
+                        </div>
+                        <div class="block3">
+                        <h2>TOTAL BOOK'S</h2>
+                        </div>
+                      
+                            <div class="block4">
+
+                            </div>
+                            <div class="block5">
+
+                            </div>
+                            <div class="block6">
+
+                            </div>
+                    
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <!-- jQuery -->
-    <script src="/js/custom.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/6070b0cce0.js" crossorigin="anonymous"></script>
     <script>

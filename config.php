@@ -14,11 +14,11 @@ if (!$conn) {
 //echo "Connected successfully <br>";
 
 
-function dd($array)
-{
-  echo "<pre>";
-  print_r($array);
-  echo "<pre>";
-  die();
-}
+// function dd($array)
+// {
+//   echo "<pre>";
+//   print_r($array);
+//   echo "<pre>";
+//   die();
+// }
 ?>

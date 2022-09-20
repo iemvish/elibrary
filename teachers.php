@@ -1,19 +1,15 @@
 <?php
 session_start();
-
 // Check do the person logged in
-if($_SESSION['email']==NULL){
+if ($_SESSION['email'] == NULL) {
     // Haven't log in
     header("location:login.php");
 }
-
-
 include('config.php');
 $query = "SELECT srno,fullName, email, gender, branch, phone, pass FROM users WHERE role=2";
 $result = mysqli_query($conn, $query);
+// 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +17,13 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashstyle.css">
     <link rel="stylesheet" href="css/event_style.css">
     <link rel="stylesheet" href="css/table.css">
+    <title>Dashboard</title>
     <style>
         .alert-success{
             background: aquamarine;
@@ -54,12 +51,21 @@ $result = mysqli_query($conn, $query);
 
 <body>
     <div class="container">
-        <?php include('header.php')?>
-        <div class="mainblock">
-        <?php include('sidebar.php'); ?>
+        <div class="row">
+            <?php include('dash_sidebar.php'); ?>
 
-            <div class="dashright">
-            <?php if(isset($_REQUEST['msg'])){?>
+            <!-- main block header or dashboard -->
+            <div class="main-dash">
+                <div class="row">
+                    <div class="main-dash-content">
+                        <!-- header -->
+                        <?php include('dash_header.php') ?>
+
+                        <div class="dashboard">
+                            <div class="row">
+                                <div class="dashboard-content">
+                                    <div class="dashright">
+                                    <?php if(isset($_REQUEST['msg'])){?>
             <div class="alert-success">
                 <p style="margin: 0px; padding:0px"><?php echo $_REQUEST['msg']?></p>
             </div>
@@ -115,10 +121,28 @@ $result = mysqli_query($conn, $query);
                 </div>
 
 
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/6070b0cce0.js" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')
+    </script>
+
 </body>
+
 </html>

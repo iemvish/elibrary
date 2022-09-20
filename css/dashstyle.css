@@ -1,0 +1,229 @@
+.container {
+    width: 100%;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F0F2F5;
+}
+
+/* sidebar */
+
+/* sidebar css */
+.sidebar {
+    width: 15%;
+    float: left;
+    background-color: #3E3E45;
+    color: white;
+    height: 100vh;
+}
+
+.sidebar-top {
+    font-size: 25px;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 2px solid;
+    margin-bottom: 45px;
+}
+
+.sidebar-top a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-top i {
+    color: white;
+    padding-right: 6px;
+}
+
+.sidebar-top h3 {
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.sidebar-menu li {
+    list-style: none;
+    padding-bottom: 50px;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.sidebar-menu {
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+.icon1 {
+    float: left;
+    width: 100%;
+}
+
+.icon2 {
+    float: right;
+    width: 100%;
+}
+
+.icon1 i {
+    color: white;
+    padding-right: 8px;
+
+
+}
+
+#icon2 i {
+    color: white;
+    padding-left: 40px;
+    float: right;
+}
+
+.dropdown-content {
+    padding-top: 25px;
+    position: absolute;
+    width: min-content;
+    display: none
+}
+
+.dropdown-content a {
+    color: #3E3E45;
+}
+
+.sidebar-menu-collapse {
+    position: absolute;
+
+}
+
+.sidebar-menu-collapse a {
+    color: white;
+    text-decoration: none;
+}
+
+.row {
+    width: 100%;
+    float: left;
+}
+
+.main-dash {
+    width: 85%;
+    float: left;
+}
+
+/* header */
+.header {
+    background-color: white;
+    width: 100%;
+    float: left;
+    border-radius: 10px;
+}
+
+.header-content {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.searchbar {
+    width: 80%;
+    float: left;
+}
+
+.sidebar-content {
+    width: 100%;
+    float: left;
+}
+
+.search {
+    width: 4%;
+    float: left;
+}
+.search-box input[type="text"]{
+    border: none;
+}
+
+.main-dash-content {
+    width: 100%;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    width: 100%;
+    float: left;
+}
+
+.dashboard-content {
+    width: 100%;
+    float: left;
+    padding-top: 15px;
+}
+
+.dashboard-content .block1 {
+    width: 32%;
+    float: left;
+    margin-right: 24px;
+    background-color: cadetblue;
+}
+
+
+.dashboard-content .block2 {
+    width: 32%;
+    margin-right: 25px;
+    float: left;
+    background-color: yellowgreen;
+}
+
+.dashboard-content .block3 {
+    width: 32%;
+    float: left;
+    background-color: tomato;
+}
+
+.block1-content,
+.block2-content,
+.block3-content {
+    width: 100%;
+    float: left;
+}
+
+.block1-content .text,
+.block2-content .text,
+.block3-content .text {
+    width: 60%;
+    float: left;
+}
+.block1-content .text h1,
+.block2-content .text h1,
+.block3-content .text h1{
+    text-align: center;
+    color: white;
+}
+.block1-content .text h2,
+.block2-content .text h2,
+.block3-content .text h2{
+    padding-left: 20px;
+    color: white;
+}
+
+
+.block1-content .block1-icon, 
+.block2-content .block1-icon, 
+.block3-content .block1-icon{
+    float: left;
+    width: 40%;
+}
+
+.block1-icon i,
+.block2-icon i,
+.block3-icon i {
+    font-size: 90px;
+    color: white;
+    padding: 45px 0px 0px 0px;
+}
