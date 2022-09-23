@@ -1,20 +1,32 @@
-table,
-        th,
-        td {
-            border: 2px solid black;
+table,td {
+           
             border-collapse: collapse;
             text-align: center;
-            padding: 5px;
+            /* padding: 5px; */
+            padding-top: 20px;
+            padding-bottom: 20px;
+            /* border-bottom: 1px solid #28282D; */
+            
+        }
+        tr {
+            box-shadow: 0px 5px 14px 0px #28282C;
+        }
+
+        th{
+            background-color: #f3701d;
+            color: white;
+            /* box-shadow: 0px 5px 14px 0px #28282C; */
+            padding: 12px;
         }
 
         table {
             width: 100%;
+            
         }
-
-        .teacher_table {
-            padding: 100px;
-            padding-top: 0;
-        }
+         .teacher_table{
+            width: 100%;
+            float: left;
+         }
         .update{
             background-color: white;
             color: blue;

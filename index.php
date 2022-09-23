@@ -18,89 +18,136 @@ session_start();
     <link rel="stylesheet" href="css/mystyle.css">
 </head>
 <style>
-    .block1 img{
+    .block1 img {
         width: 100%;
     }
-    body{
-    margin: 0;
-}
-.block1{
-    /* background-image: url('images/lb1.jpg');*/
-    background: linear-gradient(0,rgba(255,255,255,0) 0%, rgba(0,0,0, .8) 110%), url("images/lb1.jpg"); 
-    /* filter: blur(8px);
+
+    .block1-text {
+        position: relative;
+        color: white;
+        top: 175px;
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+
+    }
+    .block1-text h1{
+        font-size: 4em;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        transform: translateX(100%);
+        animation: scrolling 15s linear infinite;
+    }
+    @keyframes scrolling{
+        0%{
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(-100%);
+        }
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .block1 {
+        /* background-image: url('images/lb1.jpg');*/
+        background: linear-gradient(0, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .8) 110%), url("images/lb1.jpg");
+        /* filter: blur(8px);
     -webkit-filter: blur(8px); */
-    background-size: cover;
-    height: 900px;
-    position: relative;
-}
-.sidebar{
-    float: left;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    display: none;
-    transition: width 2s;
-    width: 100%;
-}
-.sidebarmenu{
-    color: white;
-}
-.sidebarmenu li{
-    list-style: none;
-}
-.sidebarmenu li a{
-    text-decoration: none;
-    color: white;
-}
-.play{
-    color: white;
-    text-align: end;
-    
-}
-.play i{
-    font-size: 30px;
-    text-align: -webkit-right;
-    padding-right: 50px;
-}
-.block2,.block3{
-    background-color: #F2F0EE;
-}
+        background-size: cover;
+        height: 900px;
+        position: relative;
+    }
+
+    .sidebar {
+        float: left;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        display: none;
+        transition: width 2s;
+        width: 100%;
+    }
+
+    .sidebarmenu {
+        color: white;
+    }
+
+    .sidebarmenu li {
+        list-style: none;
+    }
+
+    .sidebarmenu li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .play {
+        color: white;
+        text-align: end;
+
+    }
+
+    .play i {
+        font-size: 30px;
+        text-align: -webkit-right;
+        padding-right: 50px;
+    }
+
+    .block2,
+    .block3 {
+        background-color: #1260CC;
+    }
 </style>
+
 <body>
     <div class="container">
-    <div class="sidebar">
-        <div class="play">
-        <i id="side2" class="fa-solid fa-circle-xmark"></i>
-        </div>
-    
-                <ul class="sidebarmenu">
-                    <li><h1><a href=""> ABOUT US</a></h1></li>
-                    <li><h1><a href="">GALLERY</a></h1></li>
-                    <li><h1><a href="">COMPLAIN</a></h1></li>
-                    <li><h1><a href="">APNI SHOP</a></h1></li>
-                    <li><h1><a href="">LIB</a></h1></li>
-                    <?php
-                    if(isset($_SESSION['email']))
-                    {?>
-                        <li><h1><a href="logout.php">LOG OUT</a></h1></li>
-                   <?php } 
-                    ?>
-                </ul>
+        <div class="sidebar">
+            <div class="play">
+                <i id="side2" class="fa-solid fa-circle-xmark"></i>
             </div>
-        <div class="block1">
-            <?php include('header.php')?>
+
+            <ul class="sidebarmenu">
+                <li>
+                    <h1><a href=""> ABOUT US</a></h1>
+                </li>
+                <li>
+                    <h1><a href="">GALLERY</a></h1>
+                </li>
+                <li>
+                    <h1><a href="">COMPLAIN</a></h1>
+                </li>
+                <li>
+                    <h1><a href="">APNI SHOP</a></h1>
+                </li>
+                <li>
+                    <h1><a href="">LIB</a></h1>
+                </li>
+                <?php
+                if (isset($_SESSION['email'])) { ?>
+                    <li>
+                        <h1><a href="logout.php">LOG OUT</a></h1>
+                    </li>
+                <?php }
+                ?>
+            </ul>
         </div>
+        <div class="block1">
+            <?php include('header.php') ?>
+            <div class="block1-text">
+                
+               <h1>WELCOME TO MY PROJECT</h1>
+            </div>
+        </div>
+
 
         <div class="block2">
             <div class="block2txt">
-                <ul class="menu2">
-                    <li>W H A T</li>
-                    <li>W E</li>
-                    <li>D O</li>
-
-                </ul>
                 <h1 class="wcu">Why Choose Us</h1>
                 <p>Because you know digital. With working knowlwdge of online,SEO and
                     social

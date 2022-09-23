@@ -150,24 +150,24 @@ $checkrows = mysqli_num_rows($check);
 
                         <div class="text-name">
                             Gender: <br>
-                            <input type="radio" id="male" name="gender" value="male">
+                            <input type="radio" id="male" name="gender" value="1">
                             <label for="male">male</label><br>
-                            <input type="radio" id="female" name="gender" value="female">
+                            <input type="radio" id="female" name="gender" value="2">
                             <label for="female">female</label><br>
-                            <input type="radio" id="other" name="gender" value="other">
+                            <input type="radio" id="other" name="gender" value="3">
                              <label for="other">other</label>
                         </div>
 
                         <div class="text-name">
                             <label for="tbranch">Teacher Branch:</label> <br>
                             <select name="tbranch" id="tbranch" value="<?php echo $tbranch; ?>"> 
-                                <option value="CSE">CSE</option>
-                                <option value="EEE">EEE</option>
-                                <option value="LAW">LAW</option>
-                                <option value="ME">ME</option>
-                                <option value="PHARMACY">PHARMACY</option>
-                                <option value="CE">CE</option>
-                                <option value="EE">CE</option>
+                                <option value="1">CSE</option>
+                                <option value="2">EEE</option>
+                                <option value="3">LAW</option>
+                                <option value="4">ME</option>
+                                <option value="5">PHARMACY</option>
+                                <option value="6">CE</option>
+                                <option value="7">CE</option>
                                 <span class="error">*<?php echo $tbranchErr; ?></span>
                                 
 

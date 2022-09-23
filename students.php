@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 // Check do the person logged in
@@ -25,29 +24,179 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="css/event_style.css">
     <link rel="stylesheet" href="css/table.css">
     <title>Dashboard</title>
+    <style>
+        .dashright .top {
+            width: 100%;
+            float: left;
+        }
+
+        .top-header-content {
+            width: 100%;
+            float: left;
+        }
+
+        .dashright .search-types {
+            width: 25%;
+            float: left;
+        }
+
+        .dashright .search-types select {
+            width: 100%;
+            padding: 8px;
+            /* border: none; */
+            background-color: white;
+        }
+
+        .dashright .search-text {
+            width: 44%;
+            float: left;
+        }
+
+        .dashright .search-text input[type="text"] {
+            width: 199px;
+            /* border: none; */
+            padding: 8px;
+
+        }
+
+        .dashright .search-icon {
+            width: 10%;
+            float: left;
+            text-align: center;
+            background-color: #28282C;
+            color: white;
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        .dashright .search-icon i {
+            width: 100%;
+            padding: 10px;
+            padding-left: 0;
+        }
+
+        .dashright .search-content {
+            width: 35%;
+            float: left;
+            margin-bottom: 35px;
+        }
+
+        .plus {
+            float: left;
+            width: 65%;
+        }
+        .plus a{
+            text-decoration: none;
+        }
+        .plus .add {
+            background-color: #28282C;
+            color: white;
+            border-radius: 4px;
+            width: 20%;
+            margin-left: 50%;
+            padding: 7px;
+
+        }
+
+        .add i {
+            padding-left: 8px;
+            padding-right: 18px;
+        }
+
+        .dashright h1 {
+            color: #28282C;
+            margin-top: 0;
+        }
+
+        .dashboard-content {
+            padding-top: 0;
+        }
+
+        .add-btn :hover {
+            background-color: #026B82;
+            color: white;
+            border: none;
+          
+        }
+        .dashright .search-icon :hover{
+            background-color: #026B82;
+            color: white;
+            border: none;
+            border-radius: 0px 8px 8px 0px;
+
+        }
+       .color-red{
+        color: red;
+       }
+    </style>
 </head>
 
 <body>
     <div class="container">
+        <!-- header -->
         <div class="row">
+        <?php
+         include('dash_header.php')
+             ?>
             <?php include('dash_sidebar.php'); ?>
-
             <!-- main block header or dashboard -->
             <div class="main-dash">
                 <div class="row">
                     <div class="main-dash-content">
-                        <!-- header -->
-                        <?php include('dash_header.php') ?>
-
                         <div class="dashboard">
                             <div class="row">
                                 <div class="dashboard-content">
                                     <div class="dashright">
-                                        <p>Students Details</p>
+                                        <div class="top">
+                                            <h1>Student's</h1>
+                                            <div class="top-header">
+                                                <div class="row">
+                                                    <div class="top-header-content">
+                                                        <div class="search-content">
+                                                            <div class="row">
+                                                                <div class="search-types">
+                                                                    <select name="" id="">
+                                                                        <option value="">Name</option>
+                                                                        <option value="">Email</option>
+                                                                        <option value="">Branch</option>
+                                                                        <option value="">Semester</option>
+                                                                        <option value="">Course</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="search-text">
+                                                                    <input type="text" placeholder="Search">
+                                                                </div>
+                                                                <div class="search-icon">
+                                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="plus">
+                                                            <div class="row">
+                                                                <a href="add_student.php">
+                                                                <div class="add-btn">
+                                                                    <div class="add">
+                                                                        <i class="fa-solid fa-plus"></i>
+                                                                        <span> Add Student</span>
+                                                                    </div>
+                                                                </div>
+                                                                </a>
+                                                               
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="student_table">
                                             <table>
                                                 <tr>
-                                                    <th>Id</th>
+                                                    <th>Sr.no</th>
+                                                    <th>Profile</th>
                                                     <th>Student Name</th>
                                                     <th>Email Id</th>
                                                     <th>Gender</th>
@@ -63,14 +212,15 @@ $result = mysqli_query($conn, $query);
                                                 ?>
                                                         <tr>
                                                             <td><?php echo $sn; ?> </td>
+                                                            <td><?php echo $sn; ?> </td>
                                                             <td><?php echo $data['fullName']; ?> </td>
                                                             <td><?php echo $data['email']; ?> </td>
                                                             <td><?php echo $data['gender']; ?> </td>
                                                             <td><?php echo $data['branch']; ?> </td>
                                                             <td><?php echo $data['phone']; ?> </td>
                                                             <td><?php echo $data['pass']; ?> </td>
-                                                            <td class="u"><a href="<?php echo 'update.php?srno=' . $data['srno']; ?>"><button class="update">Update</button></a> </td>
-                                                            <td class="d"><a href="<?php echo 'delete.php?srno=' . $data['srno']; ?>"><button class="delete">Delete</button></a></td>
+                                                            <td class="u"><a href="<?php echo 'update.php?srno=' . $data['srno']; ?>"><i class="fa-solid fa-pen-to-square "></i></a> </td>
+                                                            <td class="d"><a href="<?php echo 'delete.php?srno=' . $data['srno']; ?>"><i class="fa-solid fa-trash color-red "></i></a></td>
                                                         <tr>
                                                         <?php
                                                         $sn++;
@@ -85,9 +235,6 @@ $result = mysqli_query($conn, $query);
 
 
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>

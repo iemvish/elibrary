@@ -13,10 +13,23 @@ $(document).ready(function(){
         $('.sidebar').hide(1000);
         $('.block1').css("filter","blur(0px)");
     });
+    var sidebar = 0;
     $('#menu-collapse').click((e)=>{
-        $('.menu-text').toggle();
-        $('.main-icon').toggle();
-    
-       
+        if(sidebar == 0)
+        {   
+            $('.sidebar').css("width","4%");
+            $('.main-dash').css("width","96%");
+            // $('.logo').hide();
+            $('.menu-text').hide();
+            sidebar = 1;
+        }
+        else
+        {
+            $('.sidebar').css("width","15%");
+            $('.main-dash').css("width","85%");
+            $('.menu-text').show();
+            // $('.logo').show();
+            sidebar = 0;
+        }
     })
 });

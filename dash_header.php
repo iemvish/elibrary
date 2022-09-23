@@ -15,7 +15,7 @@ include"config.php";
     <style>
         /* header */
 .header {
-    background-color: white;
+    /* background-color: white; */
     width: 100%;
     float: left;
     border-radius: 10px;
@@ -25,12 +25,12 @@ include"config.php";
 .header-content {
     width: 100%;
     float: left;
-    box-sizing: border-box;
-    padding: 20px;
+    /* box-sizing: border-box;
+    padding: 20px; */
 }
 
 .searchbar {
-    width: 80%;
+    width: 20%;
     float: left;
 }
 
@@ -40,7 +40,7 @@ include"config.php";
 }
 
 .search {
-    width: 4%;
+    width: 10%;
     float: left;
 }
 .search-box input[type="text"]{
@@ -51,35 +51,46 @@ include"config.php";
 </head>
 
 <body>
+    <!-- header -->
     <div class="header">
-        <div class="header-content">
-            <div class="searchbar">
-                <div class="row">
-                    <div class="searchbar-content">
-                        <div class="search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <div class="search-box">
-                            <input type="text" placeholder="Type here for search">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="user">
-                <?php
-                $username = $_SESSION['email'];
-                $query = "select * from users WHERE email = '$username'";
-                $run = mysqli_query($conn, $query);
-                if ($a = mysqli_fetch_array($run)) { ?>
-                    Hey!<?php
-                        echo $a['fullName'];
-                    }
-                        ?>
-                    <a href="logout.php">Logout</a>
+                            <div class="header-content">
+                            <div class="sidebar-menu-collapse">
+                <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
             </div>
 
-        </div>
-    </div>
+            <div class="sidebar-top">
+                 <i class="fa-solid fa-book-open"></i>
+                 <a href="index.php" class="main-icon"> <span class="logo"><b>e</b>Library</span></a>
+
+
+            </div>
+                                <div class="searchbar">
+                                    <div class="row">
+                                        <div class="searchbar-content">
+                                            <div class="search">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </div>
+                                            <div class="search-box">
+                                                <input type="text" placeholder="Type here for search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <?php
+                                    $username = $_SESSION['email'];
+                                    $query = "select * from users WHERE email = '$username'";
+                                    $run = mysqli_query($conn, $query);
+                                    if ($a = mysqli_fetch_array($run)) { ?>
+                                        Hey!<?php
+                                            echo $a['fullName'];
+                                        }
+                                            ?>
+                                        <a href="logout.php">Logout</a>
+                                </div>
+
+                            </div>
+                        </div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <script src="js/custom.js"></script>

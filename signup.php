@@ -41,7 +41,7 @@
     .mainblock-content {
         position: absolute;
         /* top: 20%; */
-        left: 63%;
+        left: 35%;
         float: left;
     margin-top: 70px;
         
@@ -137,6 +137,7 @@
         color: white;
     }
     .text-center {
+        text-align: center;
         border-bottom: 3px solid;
         width: 100%;
         margin-bottom: 60px;

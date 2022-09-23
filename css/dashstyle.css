@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background-color: #F0F2F5;
+    background-color: #28282C;
 }
 
 /* sidebar */
@@ -15,17 +15,22 @@ body {
 .sidebar {
     width: 15%;
     float: left;
-    background-color: #3E3E45;
+    background-color: #28282C;
     color: white;
     height: 100vh;
 }
 
 .sidebar-top {
     font-size: 25px;
-    text-align: center;
-    padding: 8px;
+    /* text-align: center; */
+    /* padding: 40px;
     border-bottom: 2px solid;
-    margin-bottom: 45px;
+    margin-bottom: 45px; */
+    width: 20%;
+    float: left;
+    padding-left: 40px;
+    width: 10%;
+    float: left;
 }
 
 .sidebar-top a {
@@ -96,6 +101,11 @@ body {
 
 .sidebar-menu-collapse {
     position: absolute;
+    top: 20px;
+    left: 21px;
+    font-size: 24px;
+    width: 10%;
+    float: left;
 
 }
 
@@ -116,10 +126,10 @@ body {
 
 /* header */
 .header {
-    background-color: white;
+    /* background-color: white; */
     width: 100%;
     float: left;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .header-content {
@@ -130,8 +140,14 @@ body {
 }
 
 .searchbar {
-    width: 80%;
+    width: 20%;
     float: left;
+}
+
+.searchbar-content {
+    width: 100%;
+    float: left;
+    margin-left: 50px;
 }
 
 .sidebar-content {
@@ -140,17 +156,38 @@ body {
 }
 
 .search {
-    width: 4%;
+    width: 10%;
+    float: left;
+    color: white;
+    padding-top: 4px;
+    font-size: 18px;
+}
+
+.search-box {
+    width: 90%;
     float: left;
 }
-.search-box input[type="text"]{
+
+.search-box input[type="text"] {
     border: none;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.user {
+    width: 60%;
+    float: left;
+
+    text-align: end;
+    color: white;
 }
 
 .main-dash-content {
     width: 100%;
     float: left;
-    padding: 15px;
+    padding: 30px;
     box-sizing: border-box;
 }
 
@@ -199,23 +236,25 @@ body {
     width: 60%;
     float: left;
 }
+
 .block1-content .text h1,
 .block2-content .text h1,
-.block3-content .text h1{
+.block3-content .text h1 {
     text-align: center;
     color: white;
 }
+
 .block1-content .text h2,
 .block2-content .text h2,
-.block3-content .text h2{
+.block3-content .text h2 {
     padding-left: 20px;
     color: white;
 }
 
 
-.block1-content .block1-icon, 
-.block2-content .block1-icon, 
-.block3-content .block1-icon{
+.block1-content .block1-icon,
+.block2-content .block1-icon,
+.block3-content .block1-icon {
     float: left;
     width: 40%;
 }
@@ -226,4 +265,8 @@ body {
     font-size: 90px;
     color: white;
     padding: 45px 0px 0px 0px;
+}
+
+.menu-text {
+    padding-right: 60px;
 }

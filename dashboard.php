@@ -24,83 +24,19 @@ if ($_SESSION['email'] == NULL) {
 <body>
     <div class="container">
         <div class="row">
-            <div class="sidebar">
-                <div class="sidebar-content">
-                    <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
-                    <div class="sidebar-top">
-                        <a href="index.php" class="main-icon"> <i class="fa-solid fa-book-open"></i><b>e</b>Library</a>
-
-                    </div>
-                    <div class="sidebar-main">
-                        <ul class="sidebar-menu">
-                            <li class="sidebar-item">
-
-                                <div class="dropdown">
-                                    <a href="">
-                                        <div class="icons">
-                                            <div class="icon1">
-                                                <i class="fa-solid fa-house-user"></i>
-                                                <span class="menu-text">Dashboard</span>
-                                            </div>
-                                            <!-- <div class="icon2">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                    </div> -->
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="dropdown-content">
-                                    <a href="">Profile</a>
-                                    <a href="">Demo</a>
-                                </div>
-                            </li>
-
-                            <li class="sidebar-item">
-                                <a href="">
-                                    <div class="icons">
-                                        <div class="icon1">
-                                            <i class="fa-solid fa-user-graduate"></i>
-                                            <span class="menu-text">Librarian</span>
-                                            <i class="fa-solid fa-angle-right"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-item">
-                                <a href="">
-                                    <div class="icons">
-                                        <div class="icon1">
-                                            <i class="fa-solid fa-users"></i>
-                                            <span class="menu-text">Student's</span>
-                                            <i class="fa-solid fa-angle-right"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-item">
-                                <a href="">
-                                    <div class="icons">
-                                        <div class="icon1">
-                                            <i class="fa-solid fa-users"></i>
-                                            <span class="menu-text">Teacher's</span>
-                                            <i class="fa-solid fa-angle-right"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- header -->
+            <div class="header">
+                            <div class="header-content">
+                            <div class="sidebar-menu-collapse">
+                <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
             </div>
 
-            <!-- main block header or dashboard -->
-            <div class="main-dash">
-                <div class="row">
-                    <div class="main-dash-content">
-                        <!-- header -->
-                        <div class="header">
-                            <div class="header-content">
+            <div class="sidebar-top">
+                <a href="index.php" class="main-icon"> <i class="fa-solid fa-book-open"></i>
+                    <span class="logo"><b>e</b>Library</span></a>
+
+
+            </div>
                                 <div class="searchbar">
                                     <div class="row">
                                         <div class="searchbar-content">
@@ -128,6 +64,16 @@ if ($_SESSION['email'] == NULL) {
 
                             </div>
                         </div>
+                        <?php include"dash_sidebar.php"; ?>
+            
+            
+
+            <!-- main block header or dashboard -->
+            <div class="main-dash">
+                
+                <div class="row">
+                    <div class="main-dash-content">
+                        
 
                         <div class="dashboard">
                             <div class="row">

@@ -16,11 +16,42 @@ if (isset($_REQUEST['srno']) && !empty($_REQUEST['srno'])) {
 
         try {
             $result = mysqli_query($conn, $update);
-            header("location:teachers.php?msg=Record Updated Successfully.");
+            include('functions.php');
+            $role = get_role($conn,$id);
+            $query = "UPDATE users SET fullName='$tname', email='$email',gender='$gender',branch='$tbranch', phone='$phone',pass='$pass' WHERE srno='$id'";
+            $data = mysqli_query($conn,$query);
+             if($data)
+             {
+              switch($role)
+              {
+                 case 2:
+                    header("location:teachers.php?msg=Record Updated Successfully.");
+                    break;
+                 case 3:
+                    header("location:students.php?msg=Record Updated Successfully.");
+                    break;
+              }
+             }
+             else
+             {
+              echo "failed to update";
+             }
+            // header("location:teachers.php?msg=Record Updated Successfully.");
         }
 
         //catch exception
         catch (Exception $e) {
+            $role = get_role($conn,$id);
+            
+              switch($role)
+              {
+                 case 2:
+                    header("location:teachers.php?error=!OOPs Some Technical Error.");
+                    break;
+                 case 3:
+                    header("location:students.php?error=!OOPs Some Technical Error.");
+                    break;
+              }
             header("location:teachers.php?error=!OOPs Some Technical Error.");
         }
     }
