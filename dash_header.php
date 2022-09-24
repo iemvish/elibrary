@@ -29,10 +29,7 @@ include"config.php";
     padding: 20px; */
 }
 
-.searchbar {
-    width: 20%;
-    float: left;
-}
+
 
 .sidebar-content {
     width: 100%;
@@ -46,51 +43,71 @@ include"config.php";
 .search-box input[type="text"]{
     border: none;
 }
-
+.user i{
+    color: white;
+}
     </style>
 </head>
 
 <body>
-    <!-- header -->
-    <div class="header">
-                            <div class="header-content">
-                            <div class="sidebar-menu-collapse">
-                <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
-            </div>
+ <!-- header -->
+ <div class="header">
+                    <div class="header-content">
+                        <div class="sidebar-menu-collapse">
+                            <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
+                        </div>
 
-            <div class="sidebar-top">
-                 <i class="fa-solid fa-book-open"></i>
-                 <a href="index.php" class="main-icon"> <span class="logo"><b>e</b>Library</span></a>
+                        <div class="sidebar-top">
+                            <a href="index.php" class="main-icon"> <i class="fa-solid fa-book-open"></i>
+                                <span class="logo"><b>e</b>Library</span></a>
 
 
-            </div>
-                                <div class="searchbar">
-                                    <div class="row">
-                                        <div class="searchbar-content">
-                                            <div class="search">
-                                                <i class="fa-solid fa-magnifying-glass"></i>
-                                            </div>
-                                            <div class="search-box">
-                                                <input type="text" placeholder="Type here for search">
-                                            </div>
-                                        </div>
+                        </div>
+                        <div class="searchbar">
+                            <div class="row">
+                                <div class="searchbar-content">
+                                    <div class="search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <div class="search-box">
+                                        <input type="text" placeholder="Type here for search">
                                     </div>
                                 </div>
-                                <div class="user">
-                                    <?php
-                                    $username = $_SESSION['email'];
-                                    $query = "select * from users WHERE email = '$username'";
-                                    $run = mysqli_query($conn, $query);
-                                    if ($a = mysqli_fetch_array($run)) { ?>
-                                        Hey!<?php
-                                            echo $a['fullName'];
-                                        }
-                                            ?>
-                                        <a href="logout.php">Logout</a>
-                                </div>
-
                             </div>
                         </div>
+                        <div class="user">
+                            <a href="" id="userp"><i class="fa-solid fa-circle-user"></i></a>
+
+                            <!-- <a href="logout.php">Logout</a> -->
+                        </div>
+                        <div class="profile" style="display:none;">
+                            <div class="pic">
+                                <i class="fa-solid fa-circle-user"></i>
+                            </div>
+                            <div class="profile-text">
+                                <?php
+                                $username = $_SESSION['email'];
+                                $query = "select * from users WHERE email = '$username'";
+                                $run = mysqli_query($conn, $query);
+                                if ($a = mysqli_fetch_array($run)) {
+                                ?>
+                                    <h3> <?php echo $a['fullName']; ?> </h3> <?php  } ?>
+
+                                <p><?php echo $a['email']; ?> </p>
+                            </div>
+                            <div class="manage">
+                                <div class="manage-content">
+                                    <button>Manage your Account</button>
+                                </div>
+                            </div>
+                            <div class="btn">
+                                <a href="logout.php"><input type="submit" value="Sign Out"></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <script src="js/custom.js"></script>

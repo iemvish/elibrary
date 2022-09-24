@@ -3,7 +3,16 @@
     float: left;
     font-family: 'Poppins', sans-serif;
 }
-
+.container-content{
+    width: 100%;
+    float: left;
+    height: 100vh;
+}
+.main-block{
+    width: 100%;
+    /* height: 100%; */
+    float: left;
+}
 body {
     margin: 0;
     background-color: #28282C;
@@ -17,7 +26,7 @@ body {
     float: left;
     background-color: #28282C;
     color: white;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .sidebar-top {
@@ -26,10 +35,10 @@ body {
     /* padding: 40px;
     border-bottom: 2px solid;
     margin-bottom: 45px; */
-    width: 20%;
+    width: 11%;
     float: left;
-    padding-left: 40px;
-    width: 10%;
+    padding-left: 53px;
+    padding-top: 7px;
     float: left;
 }
 
@@ -104,7 +113,7 @@ body {
     top: 20px;
     left: 21px;
     font-size: 24px;
-    width: 10%;
+    /* width: 10%; */
     float: left;
 
 }
@@ -117,12 +126,19 @@ body {
 .row {
     width: 100%;
     float: left;
+    height: 100%;
 }
-
 .main-dash {
     width: 85%;
     float: left;
 }
+.main-block-content
+{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
 
 /* header */
 .header {
@@ -136,18 +152,18 @@ body {
     width: 100%;
     float: left;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 12px;
 }
 
 .searchbar {
-    width: 20%;
+    width: 30%;
     float: left;
 }
 
 .searchbar-content {
     width: 100%;
     float: left;
-    margin-left: 50px;
+    /* margin-left: 16px; */
 }
 
 .sidebar-content {
@@ -156,11 +172,13 @@ body {
 }
 
 .search {
+    position: absolute;
     width: 10%;
     float: left;
-    color: white;
-    padding-top: 4px;
-    font-size: 18px;
+    color: black;
+    padding-top: 6px;
+    font-size: 22px;
+    padding-left: 10px;
 }
 
 .search-box {
@@ -172,15 +190,20 @@ body {
     border: none;
     width: 100%;
     float: left;
-    padding: 10px;
+    padding: 16px 6px 16px 40px;
     border-radius: 6px;
 }
 
 .user {
-    width: 60%;
+    width: 55%;
     float: left;
 
     text-align: end;
+    color: white;
+}
+.user i{
+    font-size: 36px;
+    padding-top: 7px;
     color: white;
 }
 
@@ -189,6 +212,7 @@ body {
     float: left;
     padding: 30px;
     box-sizing: border-box;
+    height: 90.5vh;
 }
 
 .dashboard {
@@ -269,4 +293,50 @@ body {
 
 .menu-text {
     padding-right: 60px;
+}
+.profile{
+    display: none;
+    width: 20%;
+    position: absolute;
+    left: 79%;
+    top: 71px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 15px 4px gray;
+}
+.profile .pic{
+    text-align: center;
+}
+.profile .pic i{
+    font-size: 100px;
+    padding: 33px;
+}
+.profile-text{
+    text-align: center;
+}
+.profile-text h3,
+.profile-text p{
+    margin: 0;
+}
+.manage{
+    margin-top: 20px;
+    text-align: center;
+}
+.manage-content button{
+    padding: 8px 30px 8px 30px;
+    border-radius: 29px;
+    border: 1px solid grey;
+    background-color: white;
+}
+.btn input[type="submit"]{
+    background-color: white;
+    border: 1px solid grey;
+    font-weight: bold;
+    padding: 8px 18px 8px 18px;
+    border-radius: 4px;
+}
+.btn{
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 35px;
 }

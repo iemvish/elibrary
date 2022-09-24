@@ -16,6 +16,7 @@ include "config.php";
         .row {
             width: 100%;
             float: left;
+            height: 100%;
         }
 
         /* sidebar css */
@@ -24,7 +25,7 @@ include "config.php";
             float: left;
             background-color: #28282C;
             color: white;
-            height: 100vh;
+            height: 100%;
             font-family: 'Poppins', sans-serif;
         }
 
@@ -139,8 +140,8 @@ include "config.php";
         .main-dash {
             width: 85%;
             float: left;
-            background-color: beige;
-            height: 100vh;
+            background-color: white;
+            height: 100%;
             border-radius: 25px 0px 0px 0px;
         }
     </style>
@@ -148,7 +149,7 @@ include "config.php";
 
 <body>
     <div class="sidebar">
-        <div class="row"></div>
+        <div class="row">
         <div class="sidebar-content">
             
             <div class="sidebar-main">
@@ -215,6 +216,7 @@ include "config.php";
                 </ul>
             </div> -->
         </div>
+    </div>
     </div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>

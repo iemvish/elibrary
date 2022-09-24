@@ -159,7 +159,8 @@
 
 <body>
     <?php
-
+    //  session_start();
+    //  @$_SESSION['email'] = $_POST['email'];
     // define variables and set to empty values
     $fnameErr = $emailErr = $pnumErr = $passErr = $cpassErr = $p = "";
     $fname = $email = $pnum = $pass = $confirmpass = "";
@@ -243,7 +244,7 @@
                 echo "Student Added";
                 if($result)
                 {
-                header('location:login.php');
+                header('location:dashboard.php');
                 }
             }
         } else {

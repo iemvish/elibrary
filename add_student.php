@@ -30,15 +30,41 @@
     form input[type="text"],
     form input[type="email"],
     form input[type="password"] {
+        padding: 14px;
         width: 95%;
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid burlywood;
+        border: none;
+        border-bottom: 1px solid #727273;
+        background-color: #F8F9FA;
+        outline: none;
+
     }
+
+    /* input:focus::-webkit-input-placeholder {
+    font-size: .75em;
+    position: relative;
+    top: -15px; 
+    transition: 0.2s ease-out;
+}
+
+input::-webkit-input-placeholder {
+    transition: 0.2s ease-in;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    height: 50px;
+    padding-bottom: 0px;
+    transition: 0.2s ease-in;
+}
+
+input[type="text"], input[type="password"] {
+    height: 50px;
+    transition: 0.2s ease-in;
+} */
 
     form input[type="file"] {
         width: 100%;
         float: left;
+        padding: 14px;
     }
 
     form input[type="submit"] {
@@ -47,6 +73,7 @@
         border-radius: 8px;
         color: white;
         background-color: #4CAF50;
+
     }
 
     form {
@@ -63,9 +90,13 @@
 
     form select {
         width: 100%;
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid burlywood;
+        padding: 14px;
+        border: none;
+        border-bottom: 1px solid #727273;
+        background-color: #F8F9FA;
+        outline: none;
+        color: #969696;
+
     }
 
     .form h1 {
@@ -76,7 +107,7 @@
         padding: 15px;
         padding-bottom: 0;
         /* box-shadow: 0px 18px 20px 0px #026B82; */
-        
+
     }
 
     .form-text {
@@ -107,9 +138,19 @@
     .error {
         color: red;
     }
-    .form-btn :hover{
+
+    .form-btn :hover {
         background-color: #026B82;
         font-weight: bold;
+    }
+
+    .placeholder {
+        color: #aaaabe;
+        position: absolute;
+        top: 133px;
+        left: 29px;
+        font-size: 14px;
+
     }
 </style>
 
@@ -217,7 +258,9 @@
                         <div class="form-text">
                             <div class="text1">
                                 <!-- Full Name: <br> -->
-                                <input type="text" placeholder="Full Name" name="fullName" value="<?php echo $fname; ?>"><br>
+                                <input id="fname" type="text" name="fullName" value="<?php echo $fname; ?>"><br>
+                                <span class="placeholder">Full Name <span class="star">*</span>
+                                </span>
                                 <span class="error">*<?php echo $fnameErr; ?></span><br>
                             </div>
 
@@ -228,8 +271,8 @@
                         <div class="form-text">
                             <div class="text1">
                                 <!-- Email Id: <br> -->
-                                <select class="gender" name="gender" id="">
-                                    <option value="">Select Gender</option>
+                                <select class="gender" name="gender">
+                                    <option value="">Select Gender*</option>
                                     <option value="2" <?php if (isset($_POST['gender']) &&  $_POST['gender'] == 2) {
                                                             echo "selected";
                                                         } ?>>Male</option>
@@ -245,7 +288,7 @@
 
                             <div class="text2">
                                 <!-- Branch: <br> -->
-                                <input type="email" placeholder="Email Id" name="email" value="<?php echo $email ?>"><br>
+                                <input type="text" placeholder="Email Id*" name="email" value="<?php echo $email ?>"><br>
                                 <span class="error">*<?php echo $emailErr; ?></span>
                                 <br>
                             </div>
@@ -254,12 +297,12 @@
                         <div class="form-text">
                             <div class="text1">
                                 <!-- Password: <br> -->
-                                <input type="password" placeholder="Password" name="pass" value="<?php echo $pass ?>"><br>
+                                <input type="password" placeholder="Password*" name="pass" value="<?php echo $pass ?>"><br>
                                 <span class="error">*<?php echo $passErr; ?></span><br>
                             </div>
                             <div class="text2">
                                 <!-- Phone number: <br> -->
-                                <input type="text" placeholder="Phone number" name="phone" value="<?php echo $phone ?>"><br>
+                                <input type="text" placeholder="Phone number*" name="phone" value="<?php echo $phone ?>"><br>
                                 <span class="error">*<?php echo $pnumErr; ?></span><br>
                             </div>
 
@@ -268,8 +311,8 @@
                             <!-- <label for="gender">Gender:</label> <br> -->
 
                             <div class=" text1 sem">
-                                <select name="sem" id="" name="sem">
-                                    <option value="">Select Semester</option>
+                                <select name="sem"  name="sem">
+                                    <option value="">Select Semester*</option>
                                     <option value="1" <?php if (isset($_POST['sem']) &&  $_POST['sem'] == 1) {
                                                             echo "selected";
                                                         } ?>>First</option>
@@ -296,8 +339,8 @@
                                                         } ?>>Eighth</option>
                                 </select>
                             </div>
-                            <div class="text2"><select class="gender" id="" name="branch">
-                                    <option value="">Select Branch</option>
+                            <div class="text2"><select class="gender"  name="branch">
+                                    <option value="">Select Branch*</option>
                                     <option value="1" <?php if (isset($_POST['branch']) &&  $_POST['branch'] == 1) {
                                                             echo "selected";
                                                         } ?>>CSE</option>
@@ -321,6 +364,8 @@
             </div>
         </div>
     </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/6070b0cce0.js" crossorigin="anonymous"></script>
     <script>

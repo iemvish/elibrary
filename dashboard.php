@@ -24,129 +24,101 @@ if ($_SESSION['email'] == NULL) {
 <body>
     <div class="container">
         <div class="row">
-            <!-- header -->
-            <div class="header">
-                            <div class="header-content">
-                            <div class="sidebar-menu-collapse">
-                <a href="#" id="menu-collapse"><i class="fa-solid fa-bars"></i></a>
-            </div>
-
-            <div class="sidebar-top">
-                <a href="index.php" class="main-icon"> <i class="fa-solid fa-book-open"></i>
-                    <span class="logo"><b>e</b>Library</span></a>
+            <div class="container-content">
+               <?php include "dash_header.php"; ?>
+                <div class="main-block">
+                    <div class="row">
+                        <div class="main-block-content">
+                            <?php include "dash_sidebar.php"; ?>
 
 
-            </div>
-                                <div class="searchbar">
-                                    <div class="row">
-                                        <div class="searchbar-content">
-                                            <div class="search">
-                                                <i class="fa-solid fa-magnifying-glass"></i>
-                                            </div>
-                                            <div class="search-box">
-                                                <input type="text" placeholder="Type here for search">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="user">
-                                    <?php
-                                    $username = $_SESSION['email'];
-                                    $query = "select * from users WHERE email = '$username'";
-                                    $run = mysqli_query($conn, $query);
-                                    if ($a = mysqli_fetch_array($run)) { ?>
-                                        Hey!<?php
-                                            echo $a['fullName'];
-                                        }
-                                            ?>
-                                        <a href="logout.php">Logout</a>
-                                </div>
 
-                            </div>
-                        </div>
-                        <?php include"dash_sidebar.php"; ?>
-            
-            
+                            <!-- main block header or dashboard -->
+                            <div class="main-dash">
 
-            <!-- main block header or dashboard -->
-            <div class="main-dash">
-                
-                <div class="row">
-                    <div class="main-dash-content">
-                        
+                                <div class="row">
+                                    <div class="main-dash-content">
 
-                        <div class="dashboard">
-                            <div class="row">
-                                <div class="dashboard-content">
-                                    <a href="students.php">
-                                    <div class="block1">
-                                        <div class="row">
-                                            <div class="block1-content">
-                                                <div class="text">
-                                                    <h2>TOTAL STUDENT'S</h2>
-                                                    <?php
-                                                    $query = "select * from users WHERE role=3";
-                                                    $result = mysqli_query($conn, $query);
-                                                    $check = mysqli_num_rows($result); ?>
-                                                    <h1><?php echo $check; ?></h1>
-                                                </div>
-                                                <div class="block1-icon">
-                                                <i class="fa-solid fa-users"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                                    
-                                    <a href="teachers.php">
-                                    <div class="block2">
-                                        <div class="row">
-                                            <div class="block2-content">
-                                                <div class="text">
-                                                    <h2>TOTAL TEACHER'S</h2>
-                                                    <?php
-                                                    $query = "select * from users WHERE role=2";
-                                                    $result = mysqli_query($conn, $query);
-                                                    $check = mysqli_num_rows($result); ?>
-                                                    <h1><?php echo $check; ?></h1>
-                                                </div>
-                                                <div class="block1-icon">
-                                                <i class="fa-solid fa-users"></i>
+
+                                        <div class="dashboard">
+                                            <div class="row">
+                                                <div class="dashboard-content">
+                                                    <a href="students.php">
+                                                        <div class="block1">
+                                                            <div class="row">
+                                                                <div class="block1-content">
+                                                                    <div class="text">
+                                                                        <h2>TOTAL STUDENT'S</h2>
+                                                                        <?php
+                                                                        $query = "select * from users WHERE role=3";
+                                                                        $result = mysqli_query($conn, $query);
+                                                                        $check = mysqli_num_rows($result); ?>
+                                                                        <h1><?php echo $check; ?></h1>
+                                                                    </div>
+                                                                    <div class="block1-icon">
+                                                                        <i class="fa-solid fa-users"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="teachers.php">
+                                                        <div class="block2">
+                                                            <div class="row">
+                                                                <div class="block2-content">
+                                                                    <div class="text">
+                                                                        <h2>TOTAL TEACHER'S</h2>
+                                                                        <?php
+                                                                        $query = "select * from users WHERE role=2";
+                                                                        $result = mysqli_query($conn, $query);
+                                                                        $check = mysqli_num_rows($result); ?>
+                                                                        <h1><?php echo $check; ?></h1>
+                                                                    </div>
+                                                                    <div class="block1-icon">
+                                                                        <i class="fa-solid fa-users"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="book_display.php">
+                                                        <div class="block3">
+                                                            <div class="row">
+                                                                <div class="block3-content">
+                                                                    <div class="text">
+                                                                        <h2>TOTAL BOOK'S</h2>
+                                                                        <?php
+                                                                        $query = "select * from books";
+                                                                        $result = mysqli_query($conn, $query);
+                                                                        $check = mysqli_num_rows($result); ?>
+                                                                        <h1><?php echo $check; ?></h1>
+                                                                    </div>
+                                                                    <div class="block1-icon">
+                                                                        <i class="fa-solid fa-swatchbook"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+
+
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    </a>
-                                   
-                                   <a href="book_display.php">
-                                   <div class="block3">
-                                        <div class="row">
-                                            <div class="block3-content">
-                                                <div class="text">
-                                                    <h2>TOTAL BOOK'S</h2>
-                                                    <?php
-                                                    $query = "select * from books";
-                                                    $result = mysqli_query($conn, $query);
-                                                    $check = mysqli_num_rows($result); ?>
-                                                    <h1><?php echo $check; ?></h1>
-                                                </div>
-                                                <div class="block1-icon">
-                                                <i class="fa-solid fa-swatchbook"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                   </a>
-                                    
-                    
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+
+
+
         </div>
     </div>
     <!-- jQuery -->

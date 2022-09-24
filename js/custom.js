@@ -3,6 +3,21 @@ $(document).ready(function(){
         $('.alert-success,.alert-danger').remove();
     },3000);
 ;
+   var profile = 0;
+   $('#userp').click(function(e){
+    e.preventDefault();
+    if(profile == 0)
+    {
+        $('.profile').show();
+        profile = 1;
+    }
+    else
+    {
+        $('.profile').hide();
+        profile = 0;
+    }
+ });
+
 
     $('#side').click(function(){
         $('.block1').css("filter","blur(8px)");
@@ -32,4 +47,14 @@ $(document).ready(function(){
             sidebar = 0;
         }
     })
+
+     $('#fname').click((e)=>{
+        if ($(this).value.length){
+            e.target.style.borderBottom = "3px solid #3f51b5";
+        }
+        else{
+            e.target.style.borderBottom = "3px solid #f44336";
+            
+        }
+     });
 });
