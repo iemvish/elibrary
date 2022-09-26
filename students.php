@@ -29,6 +29,10 @@ $result = mysqli_query($conn, $query);
             width: 100%;
             float: left;
         }
+        .top-header{
+            float: left;
+            width: 100%;
+        }
 
         .top-header-content {
             width: 100%;
@@ -51,7 +55,7 @@ $result = mysqli_query($conn, $query);
             width: 44%;
             float: left;
         }
-
+        
         .dashright .search-text input[type="text"] {
             width: 199px;
             /* border: none; */
@@ -93,10 +97,11 @@ $result = mysqli_query($conn, $query);
             background-color: #f3701d;
             color: white;
             border-radius: 4px;
-            width: 20%;
-            margin-left: 50%;
-            padding: 7px;
-
+            padding-left:10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right:10px;
+            display: inline-block;
         }
 
         .add i {
@@ -130,6 +135,10 @@ $result = mysqli_query($conn, $query);
 
         .color-red {
             color: red;
+        }
+        .add-btn
+        {
+            text-align: end;
         }
     </style>
 </head>

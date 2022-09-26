@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,15 +12,27 @@
     <link rel="stylesheet" href="css/dashstyle.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/all_books.css">
+    <style>
+        .main-dash {
+            height: 90.5vh;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <!-- header -->
-            <?php include('dash_header.php'); ?>
+            <?php if (isset($_SESSION['email'])) {
+                include('dash_header.php');
+            } else {
+                include('header.php');
+            } ?>
+            <?php if (isset($_SESSION['email'])) {
+                include('dash_sidebar.php');
+            } ?>
             <!-- main dashboard -->
-            <div class="main-dash">
+            <div class="main-dash" <?php if(!isset($_SESSION['email'])){  echo "style='height:100vh;'";}?>>
                 <div class="row">
                     <h1>BOOKS</h1>
                     <table>
@@ -31,50 +45,48 @@
                             <th>Book Publisher</th>
                             <th>Branch</th>
                             <th>Price</th>
-                            <?php if(isset($_SESSION["email"])){ ?>
-                            <th>Status</th>
-                            <th>Notified</th>
-                            <?php }?>
+                            <?php if (isset($_SESSION["email"])) { ?>
+                                <th>Status</th>
+                                <th>Notified</th>
+                            <?php } ?>
                         </tr>
                         <?php
-                            include('config.php');
-                            $query = "SELECT srno,book_pic, book_name, book_details, book_author, book_pub, branch, price, quantity FROM books";
-                            $result = mysqli_query($conn, $query);
-                            if (mysqli_num_rows($result) > 0) {
-                                $sn = 1;
-                                while ($data = mysqli_fetch_assoc($result)) {
-                            ?>
-                            <tr>
-                            <td><?php echo $sn; ?></td>
-                            <td><img src=" <?php echo $data['book_pic']; ?>" height="100px" width="100px"></td>
-                            <td><?php echo $data['book_name']; ?> </td>
-                            <td><?php echo $data['book_details']; ?></td>
-                            <td><?php echo $data['book_author']; ?></td>
-                            <td><?php echo $data['book_pub']; ?></td>
-                            <td><?php echo $data['branch']; ?></td>
-                            <td><?php echo $data['price']; ?></td>
+                        include('config.php');
+                        $query = "SELECT srno,book_pic, book_name, book_details, book_author, book_pub, branch, price, quantity FROM books";
+                        $result = mysqli_query($conn, $query);
+                        if (mysqli_num_rows($result) > 0) {
+                            $sn = 1;
+                            while ($data = mysqli_fetch_assoc($result)) {
+                        ?>
+                                <tr>
+                                    <td><?php echo $sn; ?></td>
+                                    <td><img src=" <?php echo $data['book_pic']; ?>" height="100px" width="100px"></td>
+                                    <td><?php echo $data['book_name']; ?> </td>
+                                    <td><?php echo $data['book_details']; ?></td>
+                                    <td><?php echo $data['book_author']; ?></td>
+                                    <td><?php echo $data['book_pub']; ?></td>
+                                    <td><?php echo $data['branch']; ?></td>
+                                    <td><?php echo $data['price']; ?></td>
+                                    <?php
+                                    if (isset($_SESSION["email"])) { ?>
+                                        <td>
+                                            <h4>Not Available</h4>
+                                        </td>
+                                        <td>
+                                            <button>Get me notify</button>
+                                        </td>
+                                    <?php  }
+                                    ?>
+
+                                </tr>
                             <?php
-                            if(isset($_SESSION["email"]))
-                            {?>
-                                <td>
-                                <h4>Not Available</h4>
-                              </td>
-                              <td>
-                                  <button>Get me notify</button>
-                              </td>
-                          <?php  }
-                            ?>
-                            
-                        </tr>
-                        <?php
                                 $sn++;
                             }
-                        }
-                         else { ?>
-                                <tr>
-                                    <td colspan="8">No data found</td>
-                                </tr>
-                            <?php } ?>
+                        } else { ?>
+                            <tr>
+                                <td colspan="8">No data found</td>
+                            </tr>
+                        <?php } ?>
                     </table>
 
                 </div>
