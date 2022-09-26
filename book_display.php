@@ -1,10 +1,10 @@
 <?php
 session_start();
 // Check do the person logged in
-if ($_SESSION['email'] == NULL) {
-    // Haven't log in
-    header("location:login.php");
-}
+// if ($_SESSION['email'] == NULL) {
+//     // Haven't log in
+//     header("location:login.php");
+// }
 include('config.php');
 $query = "SELECT srno,book_pic, book_name, book_details, book_author, book_pub, branch, price, quantity FROM books";
 $result = mysqli_query($conn, $query);
@@ -53,13 +53,14 @@ $result = mysqli_query($conn, $query);
     <div class="container">
         <div class="row">
             <?php include('dash_sidebar.php'); ?>
+             <!-- header -->
+             <?php include('dash_header.php') ?>
 
             <!-- main block header or dashboard -->
             <div class="main-dash">
                 <div class="row">
                     <div class="main-dash-content">
-                        <!-- header -->
-                        <?php include('dash_header.php') ?>
+                       
 
                         <div class="dashboard">
                             <div class="row">

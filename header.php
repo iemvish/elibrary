@@ -21,7 +21,7 @@
         }
 
         .hleft {
-            width: 30%;
+            width: 20%;
             float: left;
             padding-left: 40px;
         }
@@ -132,6 +132,7 @@
                 <ul class="menu">
 
                     <li></i><a href="index.php">HOME</a></li>
+                    <li></i><a href="all_books.php">BOOKS</a></li>
                     <li><a href="">BLOG</a></li>
                     <?php
 

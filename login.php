@@ -1,7 +1,7 @@
 <?php
 session_start();
-error_reporting(0);
-
+// error_reporting(0);
+include "config.php";
 if (isset($_SESSION['email'])) {
     header("location:dashboard.php");
 }
@@ -29,9 +29,10 @@ if (isset($_POST["sb"])) {
     }
 
     if ($valid) {
-        include "config.php";
+
         $email = $_POST["email"];
         $pass = $_POST["pass"];
+
 
         $query = "select * from users where email = '$email' and pass = '$pass'";
         $results = mysqli_query($conn, $query);
@@ -39,7 +40,9 @@ if (isset($_POST["sb"])) {
         if ($num == 1) {
             $_SESSION['email'] = $email;
             $_SESSION['pass'] = $pass;
+
             header('location:dashboard.php');
+
         } else {
             $emsg = "Incorrect email or password!";
         }
@@ -144,7 +147,6 @@ function test_input($data)
             width: 100%;
             padding-bottom: 0;
         }
-        
     </style>
 </head>
 
@@ -156,15 +158,15 @@ function test_input($data)
 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="f">
                     <h2>Login to eLibrary</h2>
-                    
+
                     <div class="textname">
                         <!-- Email Address <br> -->
                         <div class="user">
                             <i id='user' class="fa-solid fa-user"></i>
                             <input type="email" name="email" placeholder="Username"><br>
                         </div>
-                         <span class="error">*<?php echo $emailErr; ?></span>
-                   
+                        <span class="error">*<?php echo $emailErr; ?></span>
+
                     </div>
                     <div class="textname">
                         <!-- Password <br> -->
@@ -172,23 +174,23 @@ function test_input($data)
                             <i class="fa-solid fa-lock"></i>
                             <input type="password" name="pass" placeholder="Password"><br>
                         </div>
-                         <span class="error">*<?php echo $passErr; ?></span>
-                    
+                        <span class="error">*<?php echo $passErr; ?></span>
+
                     </div>
                     <div class="btn">
                         <a href=""><input type="submit" name="sb" value="Log In"></a>
                     </div>
                     <div class="foot">
                         <div class="forget">
-                        <a href="#">Forget Password!</a>
+                            <a href="#">Forget Password!</a>
                         </div>
                         <div class="create">
-                        <a href="">Create an account</a>
+                            <a href="">Create an account</a>
                         </div>
-                    
-                    
+
+
                     </div>
-              
+
                     <div class="msg">
                         <?php echo "$msg" ?>
                     </div>

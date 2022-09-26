@@ -150,73 +150,69 @@ include "config.php";
 <body>
     <div class="sidebar">
         <div class="row">
-        <div class="sidebar-content">
-            
-            <div class="sidebar-main">
-                <ul class="sidebar-menu">
-                    <li class="sidebar-item">
+            <div class="sidebar-content">
 
+                <div class="sidebar-main">
+                    <ul class="sidebar-menu">
+                 <?php if(isset($_SESSION["email"]))
+                    { ?>
+                        <li class="sidebar-item">
                         <a href="dashboard.php">
                             <div class="icons">
                                 <div class="icon1">
                                     <i class="fa-solid fa-house-user"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </div>
-                                <!-- <div class="icon2">
-                                    <i class="fa-solid fa-angle-right"></i>
-                                    </div> -->
+
                             </div>
                         </a>
-
-                        <!-- <div class="dropdown-content">
-                            <a href="">Profile</a>
-                            <a href="">Demo</a>
-                        </div> -->
                     </li>
-
                     <li class="sidebar-item">
-                        <a href="">
-                            <div class="icons">
-                                <div class="icon1">
-                                    <i class="fa-solid fa-user-graduate"></i>
-                                    <span class="menu-text">Librarian</span>
+                            <a href="">
+                                <div class="icons">
+                                    <div class="icon1">
+                                        <i id="side-icon" class="fa-solid fa-user-graduate"></i>
+                                        <span class="menu-text">Librarian</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="students.php">
+                                <div class="icons">
+                                    <div class="icon1">
+                                        <i class="fa-solid fa-users"></i>
+                                        <span class="menu-text">Student's</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="teachers.php">
+                                <div class="icons">
+                                    <div class="icon1">
+                                        <i class="fa-solid fa-users"></i>
+                                        <span class="menu-text">Teacher's</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="all_books.php">
+                                <div class="icons">
+                                    <div class="icon1">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                        <span class="menu-text">Books's</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
 
-                    <li class="sidebar-item">
-                        <a href="students.php">
-                            <div class="icons">
-                                <div class="icon1">
-                                    <i class="fa-solid fa-users"></i>
-                                    <span class="menu-text">Student's</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a href="teachers.php">
-                            <div class="icons">
-                                <div class="icon1">
-                                    <i class="fa-solid fa-users"></i>
-                                    <span class="menu-text">Teacher's</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                      <?php }?>    
+                    </ul>
+                </div>
             </div>
-            <!-- <div class="sidebar-arrow">
-                <ul>
-                    <li><i class="fa-solid fa-angle-right"></i></li>
-                    <li><i class="fa-solid fa-angle-right"></i></li>
-                    <li><i class="fa-solid fa-angle-right"></i></li>
-                </ul>
-            </div> -->
         </div>
-    </div>
     </div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>

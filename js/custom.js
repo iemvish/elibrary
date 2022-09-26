@@ -34,6 +34,7 @@ $(document).ready(function(){
         {   
             $('.sidebar').css("width","4%");
             $('.main-dash').css("width","96%");
+            // $('.side-icon').css("color","#e23826");
             // $('.logo').hide();
             $('.menu-text').hide();
             sidebar = 1;

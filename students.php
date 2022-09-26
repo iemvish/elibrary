@@ -63,7 +63,7 @@ $result = mysqli_query($conn, $query);
             width: 10%;
             float: left;
             text-align: center;
-            background-color: #28282C;
+            background-color: #f3701d;
             color: white;
             border-radius: 0px 5px 5px 0px;
         }
@@ -84,11 +84,13 @@ $result = mysqli_query($conn, $query);
             float: left;
             width: 65%;
         }
-        .plus a{
+
+        .plus a {
             text-decoration: none;
         }
+
         .plus .add {
-            background-color: #28282C;
+            background-color: #f3701d;
             color: white;
             border-radius: 4px;
             width: 20%;
@@ -112,21 +114,23 @@ $result = mysqli_query($conn, $query);
         }
 
         .add-btn :hover {
-            background-color: #026B82;
+            background-color: #e23826;
             color: white;
             border: none;
-          
+
         }
-        .dashright .search-icon :hover{
-            background-color: #026B82;
+
+        .dashright .search-icon :hover {
+            background-color: #e23826;
             color: white;
             border: none;
             border-radius: 0px 8px 8px 0px;
 
         }
-       .color-red{
-        color: red;
-       }
+
+        .color-red {
+            color: red;
+        }
     </style>
 </head>
 
@@ -134,9 +138,9 @@ $result = mysqli_query($conn, $query);
     <div class="container">
         <!-- header -->
         <div class="row">
-        <?php
-         include('dash_header.php')
-             ?>
+            <?php
+            include('dash_header.php')
+            ?>
             <?php include('dash_sidebar.php'); ?>
             <!-- main block header or dashboard -->
             <div class="main-dash">
@@ -173,14 +177,14 @@ $result = mysqli_query($conn, $query);
                                                         <div class="plus">
                                                             <div class="row">
                                                                 <a href="add_student.php">
-                                                                <div class="add-btn">
-                                                                    <div class="add">
-                                                                        <i class="fa-solid fa-plus"></i>
-                                                                        <span> Add Student</span>
+                                                                    <div class="add-btn">
+                                                                        <div class="add">
+                                                                            <i class="fa-solid fa-plus"></i>
+                                                                            <span> Add Student</span>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
                                                                 </a>
-                                                               
+
 
 
 
@@ -195,6 +199,7 @@ $result = mysqli_query($conn, $query);
                                         <div class="student_table">
                                             <table>
                                                 <tr>
+                                            
                                                     <th>Sr.no</th>
                                                     <th>Profile</th>
                                                     <th>Student Name</th>
@@ -211,6 +216,7 @@ $result = mysqli_query($conn, $query);
                                                     while ($data = mysqli_fetch_assoc($result)) {
                                                 ?>
                                                         <tr>
+                                                            
                                                             <td><?php echo $sn; ?> </td>
                                                             <td><?php echo $sn; ?> </td>
                                                             <td><?php echo $data['fullName']; ?> </td>
