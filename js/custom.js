@@ -58,4 +58,10 @@ $(document).ready(function(){
             
         }
      });
+
+   
+     $('.dropbtn','.dropdown-content').hover(
+        function(){ $(".dropdown-content").slideDown();}
+        
+     )
 });

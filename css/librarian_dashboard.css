@@ -1,0 +1,268 @@
+.alert-success {
+    background: aquamarine;
+    padding: 16px;
+    margin-left: 40px;
+    border: 1px solid grey;
+    margin-right: 40px;
+    border-radius: 13px;
+    color: black;
+    margin-top: 26px;
+}
+
+.alert-danger {
+    background: red;
+    padding: 16px;
+    margin-left: 40px;
+    border: 1px solid grey;
+    margin-right: 40px;
+    border-radius: 13px;
+    color: black;
+    margin-top: 26px;
+}
+
+.dashright .top {
+    width: 100%;
+    float: left;
+}
+
+.top-header-content {
+    width: 100%;
+    float: left;
+}
+
+.search-types {
+    width: 40%;
+    float: left;
+}
+
+.search-types select {
+    width: 100%;
+    padding: 8px;
+    /* border: none; */
+    background-color: white;
+}
+
+.search-text {
+    width: 44%;
+    float: left;
+}
+
+.search-text input[type="text"] {
+    width: 199px;
+    /* border: none; */
+    padding: 8px;
+
+}
+
+.search-icon {
+    width: 10%;
+    float: left;
+    text-align: center;
+    background-color: #28282C;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.search-icon i {
+    width: 100%;
+    padding: 10px;
+    padding-left: 0;
+}
+
+.search-content {
+    width: 35%;
+    float: left;
+    margin-bottom: 35px;
+}
+
+.plus {
+    float: left;
+    width: 65%;
+}
+
+.plus a {
+    text-decoration: none;
+}
+
+.plus .add {
+    background-color: #28282C;
+    color: white;
+    border-radius: 4px;
+    width: 20%;
+    margin-left: 50%;
+    padding: 7px;
+
+}
+
+.add i {
+    padding-left: 8px;
+    padding-right: 18px;
+}
+
+.dashright h1 {
+    color: #28282C;
+    margin-top: 0;
+}
+
+.dashboard-content {
+    padding-top: 0;
+}
+
+.add-btn :hover {
+    background-color: #026B82;
+    color: white;
+    border: none;
+
+}
+
+.search-icon :hover {
+    background-color: #026B82;
+    color: white;
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+
+}
+
+.main-dash-content {
+    padding: 12px;
+}
+
+.dashboard-content h1 {
+    color: #e23826;
+
+}
+
+.block-a .main-block1 {
+    width: 32%;
+    float: left;
+    margin-right: 24px;
+    background-color: cadetblue;
+    color: white;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.block-a .main-block1 h1,
+.block-a .main-block2 h1,
+.block-a .main-block3 h1 {
+    color: white;
+}
+
+.block-a .main-block2 {
+    width: 32%;
+    float: left;
+    margin-right: 24px;
+    background-color: #FBAD4B;
+    color: white;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.block-a .main-block3 {
+    width: 32%;
+    float: left;
+    background-color: olive;
+    color: white;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.block-a .main-block1-text,
+.block-a .main-block1-icon,
+.block-a .main-block2-text,
+.block-a .main-block2-icon,
+.block-a .main-block3-text,
+.block-a .main-block3-icon {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.block-a .main-block1-icon i,
+.block-a .main-block2-icon i,
+.block-a .main-block3-icon i {
+    padding-top: 30px;
+    font-size: 80px;
+}
+
+.block-a .main-blocks .block-a {
+    width: 100%;
+    float: left;
+}
+
+.block-a .main-blocks .block-b {
+    margin-top: 15px;
+    width: 100%;
+    float: left;
+}
+
+.block-b {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.block-b .main-block1 {
+    width: 32%;
+    float: left;
+    margin-right: 24px;
+    background-color: #59CF5D;
+    color: white;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.block-b .main-block1 h1,
+.block-b .main-block2 h1,
+.block-b .main-block3 h1 {
+    color: white;
+}
+
+.block-b .main-block2 {
+    width: 32%;
+    float: left;
+    margin-right: 24px;
+    background-color: slateblue;
+    color: white;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.block-b .main-block3 {
+    width: 32%;
+    float: left;
+    background-color: #FF646C;
+    color: white;
+    height: 180px;
+    border-radius: 15px;
+}
+
+.block-b .main-block1-text,
+.block-b .main-block1-icon,
+.block-b .main-block2-text,
+.block-b .main-block2-icon,
+.block-b .main-block3-text,
+.block-b .main-block3-icon {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.block-b .main-block1-icon i,
+.block-b .main-block2-icon i,
+.block-b .main-block3-icon i {
+    padding-top: 30px;
+    font-size: 80px;
+}
+
+.block-b .main-blocks .block-a {
+    width: 100%;
+    float: left;
+}
+
+.block-b .main-blocks .block-b {
+    margin-top: 15px;
+    width: 100%;
+    float: left;
+}

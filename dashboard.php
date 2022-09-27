@@ -6,6 +6,7 @@ if ($_SESSION['email'] == NULL) {
     // Haven't log in
     header("location:login.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +57,7 @@ if ($_SESSION['email'] == NULL) {
                                                                         <h1><?php echo $check; ?></h1>
                                                                     </div>
                                                                     <div class="block1-icon">
-                                                                        <i class="fa-solid fa-users"></i>
+                                                                    <i class="fa-solid fa-graduation-cap"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -76,7 +77,7 @@ if ($_SESSION['email'] == NULL) {
                                                                         <h1><?php echo $check; ?></h1>
                                                                     </div>
                                                                     <div class="block1-icon">
-                                                                        <i class="fa-solid fa-users"></i>
+                                                                        <i class="fa-solid fa-user-graduate"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -104,6 +105,68 @@ if ($_SESSION['email'] == NULL) {
                                                     </a>
 
 
+
+                                                </div>
+                                                <div class="dashboard-content-b">
+                                                <a href="students.php">
+                                                        <div class="block1">
+                                                            <div class="row">
+                                                                <div class="block1-content">
+                                                                    <div class="text">
+                                                                        <h2>Department's</h2>
+                                                                        <?php
+                                                                        $query = "select * from users WHERE role=3";
+                                                                        $result = mysqli_query($conn, $query);
+                                                                        $check = mysqli_num_rows($result); ?>
+                                                                        <h1><?php echo $check; ?></h1>
+                                                                    </div>
+                                                                    <div class="block1-icon">
+                                                                    <i class="fa-solid fa-building-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="teachers.php">
+                                                        <div class="block2">
+                                                            <div class="row">
+                                                                <div class="block2-content">
+                                                                    <div class="text">
+                                                                        <h2>Blog's</h2>
+                                                                        <?php
+                                                                        $query = "select * from users WHERE role=2";
+                                                                        $result = mysqli_query($conn, $query);
+                                                                        $check = mysqli_num_rows($result); ?>
+                                                                        <h1><?php echo $check; ?></h1>
+                                                                    </div>
+                                                                    <div class="block1-icon">
+                                                                    <i class="fa-solid fa-blog"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="#">
+                                                        <div class="block3">
+                                                            <div class="row">
+                                                                <div class="block3-content">
+                                                                    <div class="text">
+                                                                        <h2>Request's</h2>
+                                                                        <?php
+                                                                        $query = "select * from books";
+                                                                        $result = mysqli_query($conn, $query);
+                                                                        $check = mysqli_num_rows($result); ?>
+                                                                        <h1><?php echo $check; ?></h1>
+                                                                    </div>
+                                                                    <div class="block1-icon">
+                                                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
 
                                                 </div>
                                             </div>

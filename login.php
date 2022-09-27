@@ -41,25 +41,8 @@ if (isset($_POST["sb"])) {
         
             $_SESSION['email'] = $email;
             $_SESSION['pass'] = $pass;
-            include_once"functions.php";
-            $role = get_role($conn,$id);
-            switch($role)
-            {
-                case 1:
-                    header('location:dashboard.php');
-                    break;
-                
-                case 2:
-                    header("location:teacher_dashboard.php");
-                    break;
-                case 3:
-                    header("location:student_dashboard.php");
-                    break;
-                      
-            }
             
-
-            // header('location:dashboard.php');
+            header('location:dashboard.php');
 
         } else {
             $emsg = "Incorrect email or password!";
