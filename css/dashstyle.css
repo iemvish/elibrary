@@ -224,7 +224,7 @@ body {
     float: left;
     padding-top: 15px;
 }
-.dashboard-content-b{
+.dashboard-content{
     width: 100%;
     float: left;
     padding-top: 15px;
@@ -236,7 +236,7 @@ body {
     background-color: cadetblue;
     border-radius: 15px;
 }
-.dashboard-content-b .block1 {
+.dashboard-content .block1 {
     width: 32%;
     float: left;
     margin-right: 24px;
@@ -252,7 +252,7 @@ body {
     background-color: yellowgreen;
     border-radius: 15px;
 }
-.dashboard-content-b .block2 {
+.dashboard-content .block2 {
     width: 32%;
     margin-right: 25px;
     float: left;
@@ -266,7 +266,7 @@ body {
     background-color: tomato;
     border-radius: 15px;
 }
-.dashboard-content-b .block3 {
+.dashboard-content .block3 {
     width: 32%;
     float: left;
     background-color: #FF646C;

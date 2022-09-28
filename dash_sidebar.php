@@ -291,7 +291,7 @@ $role = get_role($conn, $id);
                                 break;
                             case 2: ?>
                                 <li class="sidebar-item">
-                                    <a href="teacher_dashboard.php">
+                                    <a href="dashboard.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-house-user"></i>
@@ -343,7 +343,7 @@ $role = get_role($conn, $id);
                             case 3: ?>
 
                                 <li class="sidebar-item">
-                                    <a href="student_dashboard.php">
+                                    <a href="dashboard.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-house-user"></i>
@@ -389,7 +389,7 @@ $role = get_role($conn, $id);
                             <?php break;
                             case 4: ?>
                                 <li class="sidebar-item">
-                                    <a href="librarian_dashboard.php">
+                                    <a href="dashboard.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-house-user"></i>

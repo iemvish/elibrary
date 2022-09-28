@@ -18,10 +18,14 @@
             background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 115%);
             position: fixed;
             backdrop-filter: blur(10px);
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
         }
 
         .hleft {
-            width: 20%;
+            width: 30%;
             float: left;
             padding-left: 40px;
         }
@@ -98,7 +102,7 @@
         }
 
         .logo {
-            padding-left: 35px;
+            padding-left: 127px;
             padding-top: 9px;
         }
 
@@ -109,9 +113,10 @@
         .white_c {
             color: #f3701d;
         }
-        #side i{
+
+        #side i {
             padding-left: 180px;
-            
+
         }
     </style>
 </head>
@@ -153,10 +158,10 @@
                         <li><a href="login.php">SIGN IN</a></li>
                     <?php  } ?>
 
-                    
 
-                
-                    
+
+
+
                     <li id="side"><i class="fa-solid fa-bars"></i></li>
 
 

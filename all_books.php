@@ -14,7 +14,8 @@ session_start();
     <link rel="stylesheet" href="css/all_books.css">
     <style>
         .main-dash {
-            height: 90.5vh;
+            height: 86vh;
+            margin-top: 106px;
         }
     </style>
 </head>
@@ -32,7 +33,9 @@ session_start();
                 include('dash_sidebar.php');
             } ?>
             <!-- main dashboard -->
-            <div class="main-dash" <?php if(!isset($_SESSION['email'])){  echo "style='height:100vh;'";}?>>
+            <div class="main-dash" <?php if(!isset($_SESSION['email'])){ 
+                //  echo "style='height:100vh;'";
+                 }?>>
                 <div class="row">
                     <h1>BOOKS</h1>
                     <table>
