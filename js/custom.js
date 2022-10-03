@@ -32,10 +32,8 @@ $(document).ready(function(){
     $('#menu-collapse').click((e)=>{
         if(sidebar == 0)
         {   
-            $('.sidebar').css("width","0%");
-            $('.main-dashboard').css("width","100%");
-            // $('.side-icon').css("color","#e23826");
-            // $('.logo').hide();
+            $('.sidebar').css("width","4%");
+            $('.main-dashboard').css("width","96%");
             $('.menu-text').hide();
             sidebar = 1;
         }

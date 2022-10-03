@@ -3,7 +3,7 @@ session_start();
 // error_reporting(0);
 include "config.php";
 if (isset($_SESSION['email'])) {
-    header("location:dashboard.php");
+    header("location:dash.php");
 }
 $email = $password = $msg = $emsg = "";
 $emailErr = $passErr = "";
@@ -42,7 +42,7 @@ if (isset($_POST["sb"])) {
             $_SESSION['email'] = $email;
             $_SESSION['pass'] = $pass;
             
-            header('location:dashboard.php');
+            header('location:dash.php');
 
         } else {
             $emsg = "Incorrect email or password!";

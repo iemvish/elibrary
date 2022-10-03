@@ -1,7 +1,13 @@
 <?php
 session_start();
-?>
+include 'config.php';
+// Check do the person logged in
+if ($_SESSION['email'] == NULL) {
+    // Haven't log in
+    header("location:login.php");
+}
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +25,14 @@ session_start();
             float: left;
             font-family: 'Poppins', sans-serif;
         }
-        .sidebar{
+
+        .sidebar {
             height: 90.5vh;
+            width: 15%;
+        }
+
+        body {
+            background-color: #28282C;
         }
 
         .row {
@@ -47,10 +59,12 @@ session_start();
         .navbar-logo a {
             color: white;
             text-decoration: none;
+
         }
 
         body {
             margin: 0;
+            background-color: #28282C;
         }
 
         .menu {
@@ -63,6 +77,7 @@ session_start();
 
         .main-icon {
             line-height: 4;
+            padding-right: 44px;
 
         }
 
@@ -126,26 +141,36 @@ session_start();
 
         .main-dashboard {
             width: 85%;
-            float: left;
+            float: right;
+            background-color: white;
+
+            height: 90.5vh;
         }
 
         .main-dash-header {
             width: 100%;
             float: left;
+            background-color: #ff8000;
+            color: white;
+            color: black;
+
         }
 
         .header-block {
             width: 66%;
             float: left;
 
+
         }
 
         .header-block h4 {
             margin-bottom: 10px;
+            color: white;
         }
 
         .header-block p {
             margin: 0;
+            color: white;
         }
 
         .header-block2 {
@@ -161,7 +186,11 @@ session_start();
         }
 
         .header-block2 ul li a {
-            color: black;
+            color: white;
+        }
+
+        .header-block2 ul li {
+            float: left;
         }
 
         .header-blocks {
@@ -169,10 +198,95 @@ session_start();
             float: left;
             padding: 35px 40px;
             box-sizing: border-box;
+            background-color: #ff8000;
+
         }
-        .slide-search{
-            width: 20px;
+
+        .slide-search {
+            display: none;
             float: left;
+        }
+
+        .dash-main-block {
+            width: 100%;
+            float: left;
+        }
+
+        .dash-main-block .col1 {
+            float: left;
+            width: 32%;
+            margin-right: 15px;
+            margin-left: 10px;
+            margin-top: 15px;
+            background-color: #c44dff;
+            border-radius: 12px;
+        }
+
+        .dash-main-block .col1 .bottom-border {
+            width: 100%;
+            float: left;
+            background-color: #ff8000;
+            border-radius: 0px 0px 12px 12px;
+        }
+
+        .dash-main-block .col1 .bottom-border p {
+            margin: 0;
+            color: white;
+            padding: 6px;
+            padding-left: 20px;
+
+        }
+
+        .col-icon {
+            width: 50%;
+            float: left;
+            color: white;
+            text-align: center;
+        }
+
+        .col-icon i {
+            font-size: 50px;
+            padding-top: 10px;
+        }
+
+        .col-text {
+            width: 50%;
+            float: left;
+            color: white;
+            font-size: small;
+            text-align: start;
+        }
+
+        .col-text p,
+        h1 {
+            font-weight: 600;
+            font-size: 20px;
+            padding-left: 10px;
+
+        }
+
+        .dash-main-block .col2 {
+            float: left;
+            width: 32%;
+            margin-right: 15px;
+            margin-top: 15px;
+            background-color: #59CF5D;
+            border-radius: 12px;
+
+        }
+
+        .dash-main-block .col3 {
+            float: left;
+            width: 32%;
+            margin-top: 15px;
+            background-color: #FF646C;
+            border-radius: 12px;
+        }
+
+        .dash-main-col {
+            float: left;
+            width: 100%;
+
         }
     </style>
 </head>
@@ -192,7 +306,7 @@ session_start();
                             <li><a href=""> <i id="search" class="fa-solid fa-magnifying-glass"></i></a></li>
                         </ul>
                         <span class="slide-search">
-                        <input type="text">
+                            <input type="text">
                         </span>
                         <ul class="right-nav">
                             <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
@@ -205,9 +319,9 @@ session_start();
                 </div>
             </div>
             <div class="container">
-                <div class="sidebar">
-                    <?php include "dash_sidebar.php"; ?>
-                </div>
+
+                <?php include "dash_sidebar.php"; ?>
+
                 <div class="main-dashboard">
                     <div class="row">
                         <div class="main-dash-header">
@@ -215,13 +329,24 @@ session_start();
                                 <div class="header-blocks">
                                     <div class="header-block">
                                         <h4>Dashboard</h4>
-                                        <p>Welcome to eLibrary</p>
+                                        <p>Welcome
+                                            <?php
+                                            $email = $_SESSION["email"];
+                                            $pass = $_SESSION["pass"];
+                                            $query = "select * from users where email = '$email' and pass = '$pass'";
+                                            $results = mysqli_query($conn, $query);
+                                            $data = mysqli_fetch_assoc($results);
+                                            echo $data['fullName'];
+
+                                            ?> to eLibrary
+                                        </p>
                                     </div>
 
                                 </div>
                                 <div class="header-block2">
                                     <ul>
                                         <li><a href=""><i class="fa-solid fa-house-chimney"></i></a></li>
+                                        <li><a href="logout.php">Logout</a></li>
                                     </ul>
                                 </div>
 
@@ -229,7 +354,146 @@ session_start();
 
                         </div>
 
-                        
+                        <div class="dash-main-block">
+                            <div class="row">
+                                <div class="dash-main-col">
+                                    <!-- Condition for the role of user -->
+                                    <?php
+                                    $id = $data['srno'];
+                                    include_once "functions.php";
+                                    $role = get_role($conn, $id);
+                                    switch ($role) {
+                                        case 1: ?>
+                                            <div class="col1">
+                                                <div class="row">
+                                                    <div class="col-text">
+                                                        <p>TOTAL STUDENTS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-book-open-reader"></i>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col2">
+                                                <div class="row">
+                                                <div class="col-text">
+                                                        <p>TOTAL TEACHERS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-user-graduate"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col3">
+                                                <div class="row">
+                                                <div class="col-text">
+                                                        <p>DEPARTMENTS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-building-user"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col1">
+                                              <div class="row">
+                                              <div class="col-text">
+                                                        <p>BLOGS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-blog"></i>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                            <div class="col2">
+                                            <div class="row">
+                                            <div class="col-text">
+                                                        <p>TOTAL BOOKS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-swatchbook"></i>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                            <div class="col3">
+                                                <div class="row">
+                                                <div class="col-text">
+                                                        <p>REQUESTS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col1">
+                                              <div class="row">
+                                              <div class="col-text">
+                                                        <p>LIBRARIAN</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                    <i class="fa-solid fa-building-user"></i>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                            <!-- <div class="col2">
+                                                <div class="row">
+                                                <div class="col-text">
+                                                        <p>TOTAL STUDENTS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                        <i class="fa-solid fa-graduation-cap"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col3">
+                                               <div class="row">
+                                               <div class="col-text">
+                                                        <p>TOTAL STUDENTS</p>
+                                                        <h1>3</h1>
+
+                                                    </div>
+                                                    <div class="col-icon">
+                                                        <i class="fa-solid fa-graduation-cap"></i>
+                                                    </div>
+                                               </div>
+                                            </div> -->
+
+                                    <?php  } ?>
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+
 
 
 

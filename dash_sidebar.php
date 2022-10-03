@@ -7,6 +7,7 @@ $results = mysqli_query($conn, $query);
 $num = mysqli_num_rows($results);
 $data = mysqli_fetch_assoc($results);
 $id = $data['srno'];
+$username = $data['fullName'];
 include_once "functions.php";
 $role = get_role($conn, $id);
 ?>
@@ -30,7 +31,7 @@ $role = get_role($conn, $id);
 
         /* sidebar css */
         .sidebar {
-            width: 15%;
+            /* width: 15%; */
             float: left;
             background-color: #28282C;
             color: white;
@@ -202,6 +203,66 @@ $role = get_role($conn, $id);
         .dropdown:hover .dropdown-content a {
             color: black;
         }
+
+        .sidebar-profile {
+            width: 100%;
+            float: left;
+        }
+
+        .sidebar-profile .profile-img {
+            width: 40%;
+            float: left;
+        }
+
+        .profile-img img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .sidebar-profile .profile-name {
+            width: 60%;
+            float: left;
+        }
+
+        .profile {
+            float: left;
+            width: 100%;
+        }
+
+        .profile .image {
+            width: 100%;
+            float: left;
+        }
+
+        .user {
+            align-self: center;
+            border: solid 1px var(--grey-1);
+            border-radius: 100px;
+            display: block;
+            height: 94px;
+            margin: 8px auto 16px;
+            width: 94px;
+        }
+
+        .user-upload {
+            position: absolute;
+            top: 157px;
+            background-color: black;
+            left: 101px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        .user-upload i{
+            padding-top: 7px;
+        }
+        .user-upload a{
+            color: white;
+        }
+        .profile p{
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -209,15 +270,32 @@ $role = get_role($conn, $id);
     <div class="sidebar">
         <div class="row">
             <div class="sidebar-content">
+                <!-- profile of user -->
+                <div class="profile">
+                    <div class="image">
+                        <form action="">
+                            <img class="user" src="images/logo2.jpg" alt="">
+                            <!-- <div class="user-upload" type="submit" name="submit">
+                                <a href=""><i class="fa-solid fa-camera"></i></a>
+                            </div> -->
+                        </form>
+
+                    </div>
+                 <p>
+                 <?php echo "$username";?>
+                 </p>  
+                </div>
+
 
                 <div class="sidebar-main">
+
                     <ul class="sidebar-menu">
                         <?php switch ($role) {
 
                             case 1:
                                 if (isset($_SESSION["email"])) { ?>
                                     <li class="sidebar-item">
-                                        <a href="dashboard.php">
+                                        <a href="dash.php">
                                             <div class="icons">
                                                 <div class="icon1">
                                                     <i class="fa-solid fa-house-user"></i>
@@ -229,7 +307,7 @@ $role = get_role($conn, $id);
                                     </li>
 
                                     <li class="sidebar-item">
-                                        <a href="dashboard.php">
+                                        <a href="userProfile.php">
                                             <div class="icons">
                                                 <div class="icon1">
                                                     <i class="fa-solid fa-user"></i>
@@ -291,7 +369,7 @@ $role = get_role($conn, $id);
                                 break;
                             case 2: ?>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-house-user"></i>
@@ -302,7 +380,7 @@ $role = get_role($conn, $id);
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-user"></i>
@@ -343,7 +421,7 @@ $role = get_role($conn, $id);
                             case 3: ?>
 
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-house-user"></i>
@@ -354,7 +432,7 @@ $role = get_role($conn, $id);
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="userProfile.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-user"></i>
@@ -389,7 +467,7 @@ $role = get_role($conn, $id);
                             <?php break;
                             case 4: ?>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-house-user"></i>
@@ -400,7 +478,7 @@ $role = get_role($conn, $id);
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="userProfile.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-user"></i>
@@ -411,7 +489,7 @@ $role = get_role($conn, $id);
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-user"></i>
@@ -422,7 +500,7 @@ $role = get_role($conn, $id);
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <div class="dropdown">
@@ -440,7 +518,7 @@ $role = get_role($conn, $id);
                                     </a>
                                 </li>
                                 <li id="down" class="sidebar-item">
-                                    <a href="dashboard.php">
+                                    <a href="dash.php">
                                         <div class="icons">
                                             <div class="icon1">
                                                 <i class="fa-solid fa-user"></i>

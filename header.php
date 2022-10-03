@@ -142,7 +142,7 @@
                     <?php
 
                     if (isset($_SESSION['email'])) {  ?>
-                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="dash.php">Dashboard</a></li>
                     <?php
                     } else {   ?>
                         <li><a href="signup.php">SIGN UP </a></li>

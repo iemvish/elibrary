@@ -8,7 +8,7 @@ if ($_SESSION['email'] == NULL) {
 include('config.php');
 $query = "SELECT srno,fullName, email, gender, branch, phone, pass FROM users WHERE role=2";
 $result = mysqli_query($conn, $query);
-// 
+//
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -157,6 +157,8 @@ $result = mysqli_query($conn, $query);
         <div class="row">
             <!-- header -->
             <?php include('dash_header.php'); ?>
+
+
             <!-- sidebar -->
             <?php include('dash_sidebar.php'); ?>
 

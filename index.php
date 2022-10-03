@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION["email"]))
 {
-    header("location:dashboard.php");
+    header("location:dash.php");
 }
 ?>
 
@@ -143,10 +143,6 @@ if(isset($_SESSION["email"]))
         </div>
         <div class="block1">
             <?php include('header.php') ?>
-            <div class="block1-text">
-                
-               <h1>WELCOME TO MY PROJECT</h1>
-            </div>
         </div>
 
 
