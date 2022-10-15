@@ -5,10 +5,11 @@ include 'config.php';
 if ($_SESSION['email'] == NULL) {
     // Haven't log in
     header("location:login.php");
-}
-$query = "SELECT fullName, email, gender, branch, phone, pass FROM users";
+} 
+$query = "SELECT * FROM users";
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_assoc($result);
+$id = $data['srno'];
 
 $fnameErr = $emailErr = $pnumErr = $passErr = $cpassErr = $p = "";
 $fname = $email = $pnum = $pass = $confirmpass = "";
@@ -54,6 +55,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+@$fullName = $_POST['fullName'];
+@$email = $_POST['email'];
+@$gender = $_POST['gender'];
+@$branch = $_POST['branch'];
+@$sem = $_POST['sem'];
+@$phone = $_POST['phone'];
+@$pass = $_POST['pass'];
+
+include "functions.php";
+$role = get_role($conn,$id);
+
+$update = "UPDATE users SET fullName = '$fullName' WHERE role = '$role' ";
+$run = mysqli_query($conn,$update);
 
 function test_input($data)
 {
@@ -200,8 +214,7 @@ function test_input($data)
             width: 85%;
             float: right;
             background-color: white;
-
-            height: 90.5vh;
+            height: 90vh;
         }
 
         .main-dash-header {
@@ -546,25 +559,10 @@ function test_input($data)
 
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
                     </div>
 
                 </div>
             </div>
-
-
-
-
-
-
         </div>
     </div>
     <!-- jQuery -->

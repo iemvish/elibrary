@@ -32,7 +32,7 @@ if (isset($_POST["sb"])) {
 
         $email = $_POST["email"];
         $pass = $_POST["pass"];
-        $query = "select * from users where email = '$email' and pass = '$pass'";
+        $query = "select * from users WHERE email = '$email' and pass = '$pass'";
         $results = mysqli_query($conn, $query);
         $num = mysqli_num_rows($results);
         $data = mysqli_fetch_assoc($results);

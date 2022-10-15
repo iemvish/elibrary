@@ -144,7 +144,7 @@ if ($_SESSION['email'] == NULL) {
             float: right;
             background-color: white;
 
-            height: 90.5vh;
+            height: 90vh;
         }
 
         .main-dash-header {
@@ -203,7 +203,7 @@ if ($_SESSION['email'] == NULL) {
         }
 
         .slide-search {
-            display: none;
+            position: relative;
             float: left;
         }
 
@@ -220,6 +220,7 @@ if ($_SESSION['email'] == NULL) {
             margin-top: 15px;
             background-color: #c44dff;
             border-radius: 12px;
+
         }
 
         .dash-main-block .col1 .bottom-border {
@@ -273,6 +274,7 @@ if ($_SESSION['email'] == NULL) {
             background-color: #59CF5D;
             border-radius: 12px;
 
+
         }
 
         .dash-main-block .col3 {
@@ -281,12 +283,30 @@ if ($_SESSION['email'] == NULL) {
             margin-top: 15px;
             background-color: #FF646C;
             border-radius: 12px;
+
         }
 
         .dash-main-col {
             float: left;
             width: 100%;
 
+        }
+
+        #search {
+            position: absolute;
+            top: 13px;
+            
+        }
+        .searchbox{
+            display: none;
+        }
+
+        .col-content {
+            float: left;
+            height: 170px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 25px;
         }
     </style>
 </head>
@@ -303,15 +323,18 @@ if ($_SESSION['email'] == NULL) {
                     </div>
                     <div class="navbar-conatiner">
                         <ul class="left-nav">
-                            <li><a href=""> <i id="search" class="fa-solid fa-magnifying-glass"></i></a></li>
+                            <li><a href=""> <i id="search" class="fa-solid fa-magnifying-glass"></i>
+                        <div class="searchbox">
+                            <input  type="text">
+                        </div></a></li>
                         </ul>
-                        <span class="slide-search">
+                        <!-- <span class="slide-search">
                             <input type="text">
-                        </span>
+                        </span> -->
                         <ul class="right-nav">
                             <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
                             <li>
-
+                                <a href="logout.php">logout</a>
                             </li>
 
                         </ul>
@@ -324,7 +347,7 @@ if ($_SESSION['email'] == NULL) {
 
                 <div class="main-dashboard">
                     <div class="row">
-                        <div class="main-dash-header">
+                        <!-- <div class="main-dash-header">
                             <div class="row">
                                 <div class="header-blocks">
                                     <div class="header-block">
@@ -352,103 +375,124 @@ if ($_SESSION['email'] == NULL) {
 
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <div class="dash-main-block">
                             <div class="row">
                                 <div class="dash-main-col">
                                     <!-- Condition for the role of user -->
                                     <?php
-                                    $id = $data['srno'];
+                                    @$id = $data['srno'];
                                     include_once "functions.php";
                                     $role = get_role($conn, $id);
                                     switch ($role) {
                                         case 1: ?>
                                             <div class="col1">
                                                 <div class="row">
-                                                    <div class="col-text">
-                                                        <p>TOTAL STUDENTS</p>
-                                                        <h1>3</h1>
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>TOTAL STUDENTS</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-book-open-reader"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-book-open-reader"></i>
-                                                    </div>
+
 
                                                 </div>
 
                                             </div>
                                             <div class="col2">
                                                 <div class="row">
-                                                <div class="col-text">
-                                                        <p>TOTAL TEACHERS</p>
-                                                        <h1>3</h1>
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>TOTAL TEACHERS</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-user-graduate"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-user-graduate"></i>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                             <div class="col3">
                                                 <div class="row">
-                                                <div class="col-text">
-                                                        <p>DEPARTMENTS</p>
-                                                        <h1>3</h1>
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>DEPARTMENTS</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-building-user"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-building-user"></i>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                             <div class="col1">
-                                              <div class="row">
-                                              <div class="col-text">
-                                                        <p>BLOGS</p>
-                                                        <h1>3</h1>
+                                                <div class="row">
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>BLOGS</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-blog"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-blog"></i>
-                                                    </div>
-                                              </div>
+
+                                                </div>
                                             </div>
                                             <div class="col2">
-                                            <div class="row">
-                                            <div class="col-text">
-                                                        <p>TOTAL BOOKS</p>
-                                                        <h1>3</h1>
+                                                <div class="row">
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>TOTAL BOOKS</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-swatchbook"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-swatchbook"></i>
-                                                    </div>
-                                            </div>
+
+                                                </div>
                                             </div>
                                             <div class="col3">
                                                 <div class="row">
-                                                <div class="col-text">
-                                                        <p>REQUESTS</p>
-                                                        <h1>3</h1>
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>REQUESTS</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                             <div class="col1">
-                                              <div class="row">
-                                              <div class="col-text">
-                                                        <p>LIBRARIAN</p>
-                                                        <h1>3</h1>
+                                                <div class="row">
+                                                    <div class="col-content">
+                                                        <div class="col-text">
+                                                            <p>LIBRARIAN</p>
+                                                            <h1>3</h1>
 
+                                                        </div>
+                                                        <div class="col-icon">
+                                                            <i class="fa-solid fa-building-user"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-icon">
-                                                    <i class="fa-solid fa-building-user"></i>
-                                                    </div>
-                                              </div>
+
+                                                </div>
                                             </div>
                                             <!-- <div class="col2">
                                                 <div class="row">

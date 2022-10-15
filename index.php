@@ -105,7 +105,7 @@ if(isset($_SESSION["email"]))
 
     .block2,
     .block3 {
-        background-color: #1260CC;
+        background-color: white;
     }
 </style>
 

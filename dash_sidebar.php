@@ -6,8 +6,8 @@ $query = "select * from users where email = '$email' and pass = '$pass'";
 $results = mysqli_query($conn, $query);
 $num = mysqli_num_rows($results);
 $data = mysqli_fetch_assoc($results);
-$id = $data['srno'];
-$username = $data['fullName'];
+@$id = $data['srno'];
+@$username = $data['fullName'];
 include_once "functions.php";
 $role = get_role($conn, $id);
 ?>
@@ -274,7 +274,7 @@ $role = get_role($conn, $id);
                 <div class="profile">
                     <div class="image">
                         <form action="">
-                            <img class="user" src="images/logo2.jpg" alt="">
+                            <img class="user" src="" alt="">
                             <!-- <div class="user-upload" type="submit" name="submit">
                                 <a href=""><i class="fa-solid fa-camera"></i></a>
                             </div> -->
