@@ -946,14 +946,15 @@ body{
 .footer {
     width: 100%;
     float: left;
-    background-color: #EDF1EF;
+    background-color: black;
+    color: white;
 }
 
 .fmenu {
     list-style: none;
     font-size: 26px;
     font-weight: 500;
-    color: #3CBFAE ;
+    color: white ;
 }
 
 .fmenu li {
@@ -967,8 +968,11 @@ body{
 }
 
 .Md {
-    padding-right: 155px;
+    padding-right: 173  px;
     padding-left: 116px;
+}
+.Md .m{
+    color:#ff4a02;
 }
 
 .rp {
@@ -1034,18 +1038,23 @@ body{
     list-style: none;
     margin: 0;
     padding: 0;
+    
 
 }
 
 .fpart2m a {
     text-decoration: none;
-    color: black;
+    color: white;
+    
 }
 
 .fpart2m li {
     padding-bottom: 6px;
 }
-
+.fpart2m li i{
+    color: white;
+    font-size: mediums;
+}
 .fp1menu {
     list-style: none;
     padding: 0;
@@ -1054,6 +1063,9 @@ body{
 .fp1menu a {
     text-decoration: none;
     display: inline-block;
+    color: white;
+    padding-right: 7px;
+    font-size: 28px;
 }
 
 .fp1menu img {

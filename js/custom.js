@@ -43,7 +43,7 @@ $(document).ready(function () {
             sidebar = 0;
         }
     });
-
+    
 
     $('#uploadForm').on('submit', (function (e) {
         e.preventDefault();

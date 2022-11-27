@@ -253,7 +253,7 @@ input[type="text"], input[type="password"] {
         <div class="row">
             <div class="form">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <h1>Add Student</h1>
+                    <h1>Add Teachers</h1>
                     <div class="form-data">
                         <div class="form-text">
                             <div class="text1">
@@ -357,7 +357,7 @@ input[type="text"], input[type="password"] {
 
                         </div>
                         <div class="form-btn">
-                            <input id="btn2" type="submit" value="ADD STUDENT">
+                            <input id="btn2" type="submit" value="ADD TEACHER">
                         </div>
                     </div>
                 </form>

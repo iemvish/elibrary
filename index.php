@@ -10,7 +10,6 @@ if(isset($_SESSION["email"]))
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +21,20 @@ if(isset($_SESSION["email"]))
     <link rel="stylesheet" href="css/mystyle.css">
 </head>
 <style>
+    
     .block1 img {
+        width: 100%;
+    }
+
+    .sidebar {
+        float: left;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        display: none;
+        transition: width 2s;
         width: 100%;
     }
 
@@ -66,17 +78,7 @@ if(isset($_SESSION["email"]))
         position: relative;
     }
 
-    .sidebar {
-        float: left;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        display: none;
-        transition: width 2s;
-        width: 100%;
-    }
+    
 
     .sidebarmenu {
         color: white;
@@ -149,9 +151,7 @@ if(isset($_SESSION["email"]))
         <div class="block2">
             <div class="block2txt">
                 <h1 class="wcu">Why Choose Us</h1>
-                <p>Because you know digital. With working knowlwdge of online,SEO and
-                    social
-                    media</p>
+                <p>Because we provide a platform for you</p>
                 <p>we can take your message wherever it need to go</p>
             </div>
 
@@ -676,21 +676,20 @@ if(isset($_SESSION["email"]))
             <div class="ftxt">
                 <div class="fparts">
                     <div class="fpart1">
-                        <p>Lorem of the main advantages of Masterstudy is a simple interface.Everything is created for
-                            users'convenience</p>
+                        <p>ELibrary are online plateform for students where he/she can check available book at library, take books on rent.</p>
                         <h3>Follow Us</h3>
                         <ul class="fp1menu">
                             <a href="">
-                                <li><img src="images\f.png" alt=""></li>
+                                <li><i class="fa-brands fa-facebook"></i></li>
                             </a>
                             <a href="">
-                                <li><img src="images\in.png" alt=""></li>
+                                <li><i class="fa-brands fa-linkedin"></i></li>
                             </a>
                             <a href="">
-                                <li><img src="images\i.png" alt=""></li>
+                                <li><i class="fa-brands fa-square-instagram"></i></li>
                             </a>
                             <a href="">
-                                <li><img src="images\t.png" alt=""></li>
+                                <li><i class="fa-brands fa-square-twitter"></i></li>
                             </a>
 
                         </ul>

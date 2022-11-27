@@ -1,15 +1,15 @@
 <?php
-include "config.php";
 $email = $_SESSION['email'];
 $pass = $_SESSION['pass'];
 $query = "select * from users where email = '$email' and pass = '$pass'";
 $results = mysqli_query($conn, $query);
 $num = mysqli_num_rows($results);
 $data = mysqli_fetch_assoc($results);
-@$id = $data['srno'];
-@$username = $data['fullName'];
-include_once "functions.php";
+$id = $data['srno'];
+$username = $data['fullName'];
+include "functions.php";
 $role = get_role($conn, $id);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,10 +90,8 @@ $role = get_role($conn, $id);
         }
 
         .icon1 i {
-            color: white;
-            padding-right: 8px;
-
-
+                  color: white;
+                  padding-right: 8px;
         }
 
         #icon2 i {
@@ -227,6 +225,7 @@ $role = get_role($conn, $id);
         .profile {
             float: left;
             width: 100%;
+            text-align: center;
         }
 
         .profile .image {
@@ -234,15 +233,6 @@ $role = get_role($conn, $id);
             float: left;
         }
 
-        .user {
-            align-self: center;
-            border: solid 1px var(--grey-1);
-            border-radius: 100px;
-            display: block;
-            height: 94px;
-            margin: 8px auto 16px;
-            width: 94px;
-        }
 
         .user-upload {
             position: absolute;
@@ -254,14 +244,29 @@ $role = get_role($conn, $id);
             text-align: center;
             border-radius: 50%;
         }
-        .user-upload i{
+
+        .user-upload i {
             padding-top: 7px;
         }
-        .user-upload a{
+
+        .user-upload a {
             color: white;
         }
-        .profile p{
+
+        .profile p {
             text-align: center;
+        }
+
+        .profile .image input[type="file"] {
+            height: 110px;
+            width: 110px;
+            border: 1px solid white;
+            border-radius: 50%;
+
+        }
+
+        .profile .image input[type=file]::-webkit-file-upload-button {
+            visibility: hidden;
         }
     </style>
 </head>
@@ -271,19 +276,17 @@ $role = get_role($conn, $id);
         <div class="row">
             <div class="sidebar-content">
                 <!-- profile of user -->
-                <div class="profile">
+                <div class="profile"> 
                     <div class="image">
-                        <form action="">
-                            <img class="user" src="" alt="">
-                            <!-- <div class="user-upload" type="submit" name="submit">
-                                <a href=""><i class="fa-solid fa-camera"></i></a>
-                            </div> -->
+                        <form action="" id="uploadForm" method="post" enctype="multipart/form-data">
+                            <input type="file" name="file"> <br> <br>
+                            <input type="submit" name="submit" value="submit">
                         </form>
 
                     </div>
-                 <p>
-                 <?php echo "$username";?>
-                 </p>  
+                    <p>
+                        <?php echo "$username"; ?>
+                    </p>
                 </div>
 
 

@@ -295,9 +295,10 @@ if ($_SESSION['email'] == NULL) {
         #search {
             position: absolute;
             top: 13px;
-            
+
         }
-        .searchbox{
+
+        .searchbox {
             display: none;
         }
 
@@ -324,13 +325,12 @@ if ($_SESSION['email'] == NULL) {
                     <div class="navbar-conatiner">
                         <ul class="left-nav">
                             <li><a href=""> <i id="search" class="fa-solid fa-magnifying-glass"></i>
-                        <div class="searchbox">
-                            <input  type="text">
-                        </div></a></li>
+                                    <div class="searchbox">
+                                        <input type="text">
+                                    </div>
+                                </a></li>
                         </ul>
-                        <!-- <span class="slide-search">
-                            <input type="text">
-                        </span> -->
+
                         <ul class="right-nav">
                             <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
                             <li>
@@ -347,47 +347,18 @@ if ($_SESSION['email'] == NULL) {
 
                 <div class="main-dashboard">
                     <div class="row">
-                        <!-- <div class="main-dash-header">
-                            <div class="row">
-                                <div class="header-blocks">
-                                    <div class="header-block">
-                                        <h4>Dashboard</h4>
-                                        <p>Welcome
-                                            <?php
-                                            $email = $_SESSION["email"];
-                                            $pass = $_SESSION["pass"];
-                                            $query = "select * from users where email = '$email' and pass = '$pass'";
-                                            $results = mysqli_query($conn, $query);
-                                            $data = mysqli_fetch_assoc($results);
-                                            echo $data['fullName'];
-
-                                            ?> to eLibrary
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div class="header-block2">
-                                    <ul>
-                                        <li><a href=""><i class="fa-solid fa-house-chimney"></i></a></li>
-                                        <li><a href="logout.php">Logout</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div> -->
-
                         <div class="dash-main-block">
                             <div class="row">
                                 <div class="dash-main-col">
                                     <!-- Condition for the role of user -->
                                     <?php
-                                    @$id = $data['srno'];
+                                    $id = $data['srno'];
                                     include_once "functions.php";
                                     $role = get_role($conn, $id);
                                     switch ($role) {
                                         case 1: ?>
-                                            <div class="col1">
+                                        <a href=""> 
+                                        <div class="col1">
                                                 <div class="row">
                                                     <div class="col-content">
                                                         <div class="col-text">
@@ -399,11 +370,9 @@ if ($_SESSION['email'] == NULL) {
                                                             <i class="fa-solid fa-book-open-reader"></i>
                                                         </div>
                                                     </div>
-
-
                                                 </div>
-
-                                            </div>
+                                            </div> </a>
+                                            <a href="">
                                             <div class="col2">
                                                 <div class="row">
                                                     <div class="col-content">
@@ -419,6 +388,9 @@ if ($_SESSION['email'] == NULL) {
 
                                                 </div>
                                             </div>
+                                            </a>
+                                            
+                                            <a href="">
                                             <div class="col3">
                                                 <div class="row">
                                                     <div class="col-content">
@@ -434,6 +406,9 @@ if ($_SESSION['email'] == NULL) {
 
                                                 </div>
                                             </div>
+                                            </a>
+                                           
+                                            <a href="">
                                             <div class="col1">
                                                 <div class="row">
                                                     <div class="col-content">
@@ -449,6 +424,9 @@ if ($_SESSION['email'] == NULL) {
 
                                                 </div>
                                             </div>
+                                            </a>
+                                            
+                                            <a href="all_books.php">
                                             <div class="col2">
                                                 <div class="row">
                                                     <div class="col-content">
@@ -464,6 +442,9 @@ if ($_SESSION['email'] == NULL) {
 
                                                 </div>
                                             </div>
+                                            </a>
+                                            
+                                            <a href="">
                                             <div class="col3">
                                                 <div class="row">
                                                     <div class="col-content">
@@ -479,6 +460,9 @@ if ($_SESSION['email'] == NULL) {
 
                                                 </div>
                                             </div>
+                                            </a>
+                                            
+                                            <a href="">
                                             <div class="col1">
                                                 <div class="row">
                                                     <div class="col-content">
@@ -494,6 +478,8 @@ if ($_SESSION['email'] == NULL) {
 
                                                 </div>
                                             </div>
+                                            </a>
+                                            
                                             <!-- <div class="col2">
                                                 <div class="row">
                                                 <div class="col-text">

@@ -170,7 +170,8 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["fullName"])) {
             $fnameErr = "Name is required!";
-        } else {
+        } 
+        else {
             $fname = test_input($_POST["fullName"]);
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z-' ]*$/", $fname)) {
@@ -180,7 +181,8 @@
 
         if (empty($_POST["email"])) {
             $emailErr = "Email is required!";
-        } else {
+        } 
+        else {
             $email = test_input($_POST["email"]);
             // check if e-mail address is well-formed
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

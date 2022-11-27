@@ -63,10 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 @$phone = $_POST['phone'];
 @$pass = $_POST['pass'];
 
-include "functions.php";
-$role = get_role($conn,$id);
+// include "functions.php";
+// $role = get_role($conn,$id);
 
-$update = "UPDATE users SET fullName = '$fullName' WHERE role = '$role' ";
+$update = "UPDATE users SET fullName = '$fullName' WHERE role = '1' ";
 $run = mysqli_query($conn,$update);
 
 function test_input($data)
